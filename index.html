@@ -44,9 +44,34 @@
     </section>
 
     <footer>
-        <h3>footer</h3>
+        <!--<form name="myForm" method="post" action="/javascript/getcookie/" onsubmit="return storeValues(this);">-->
+        <form class="col-xs-12 col-sm-4 col-md-4">
+            <fieldset class="form-group">
+                <label>Login</label>
+                <span>
+                    <input  class="form-control" type="text" size="15" name="field1" value="">
+                </span>
+                <label>Name</label>
+                <span>
+                    <input class="form-control" type="text" size="15" name="field2" value="">
+                </span>
+                <label>Social Media</label>
+                <span>
+                    <select class="form-control" id="exampleSelect1">
+                        <option>Facebook</option>
+                        <option>Twitter</option>
+                        <option>Google +</option>
+                        <option>LinkedIn</option>
+                    </select>
+                </span>
+                <br>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <!--<input type="button" onclick="clearCookies();" value="Clear Cookies"></span>-->
+             </fieldset>
+        </form>
     </footer>
 </div>
 <script src="javascript/jquery-2.1.4.js"></script>
+<script src="javascript/firends-recommendation.js"></script>
 </body>
 </html>

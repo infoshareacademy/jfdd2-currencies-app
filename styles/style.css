@@ -1,13 +1,14 @@
-body {
-    text-align: center;
-}
+
 section, footer{
     border: 1px solid lightgray;
     clear: both;
 }
-menu, section, footer{
-    background: lightgoldenrodyellow;
+ /*FRIENDS RECOMMENDATION*/
+
+button, label{
+    margin-left: 10px;
 }
+
 .exampleIcon {
     height: 50px;
     background: lightgray;
