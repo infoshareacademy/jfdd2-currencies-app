@@ -1,4 +1,20 @@
+body {
+    text-align: center;
+}
 section, footer{
+    border: 1px solid lightgray;
+    clear: both;
+}
+menu, section, footer{
+    background: lightgoldenrodyellow;
+}
+.exampleIcon {
+    height: 50px;
+    background: lightgray;
     border: 1px solid grey;
-    height: 100px;
+}
+.exampleChart {
+    background: lightcyan;
+    height: 50px;
+    border: 1px solid grey;
 }
