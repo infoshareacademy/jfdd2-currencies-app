@@ -1,5 +1,6 @@
 (function(){
-    var app = angular.module('Workshop', ['chart.js', 'ui.bootstrap']);
+    var app = angular.module('Workshop', ['chart.js', 'ui.bootstrap'])
+        .directive('ohDivWalut', ohDivWalut);
 
     app.controller('BaseController', function ($scope) {
         $scope.val1 = 'hello'
@@ -17,4 +18,14 @@
             console.log(points, evt);
         };
     });
+
+    function ohDivWalut() {
+        return {
+            restrict: 'E',
+            scope: {
+                extraClasses: '@'
+            },
+            template: '<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 exampleIcon {{extraClasses}}"></div>'
+        }
+    }
 })();

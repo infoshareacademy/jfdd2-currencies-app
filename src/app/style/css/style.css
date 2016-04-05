@@ -17,3 +17,7 @@ menu, section, footer{
     background: lightcyan;
     border: 1px solid grey;
 }
+
+.container-fluid {
+    padding: 0px;
+}
