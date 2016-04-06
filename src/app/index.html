@@ -2,7 +2,6 @@
 <html lang="en" ng-app="Workshop">
 <head>
     <meta charset="UTF-8">
-    <title>Workshop</title>
 
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="style/css/bootstrap.css" />
@@ -109,8 +108,24 @@
                         chart-click="onClick" >
                 </canvas>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 exampleChart"><p>Pound {{val2}}</p></div>
-            <div class="col-xs-12 col-sm-4 col-md-4 exampleChart"><p>Euro {{val3}}</p></div>
+            <div class="col-xs-12 col-sm-4 col-md-4 exampleChart"><p>Pound {{val2}}</p>
+                <canvas id="line-two" class="chart chart-line" chart-data="data"
+                        chart-labels="labels" chart-legend="true" chart-series="series"
+                        chart-click="onClick" >
+                </canvas>
+
+
+            </div>
+
+            <div class="col-xs-12 col-sm-4 col-md-4 exampleChart"><p>Euro {{val3}}</p>
+                <canvas id="line-three" class="chart chart-line" chart-data="data"
+                        chart-labels="labels" chart-legend="true" chart-series="series"
+                        chart-click="onClick" >
+                </canvas>
+
+
+            </div>
+
         </section>
 
         <footer>
