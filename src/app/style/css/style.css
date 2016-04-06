@@ -17,6 +17,9 @@ section, footer{
     float: left;
     transition-duration: 100ms;
 }
+.navbar-default {
+    background-color: blue;
+}
 /*FRIENDS RECOMMENDATION*/
 form h3 {
     font-size: 16px;
