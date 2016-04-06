@@ -17,4 +17,22 @@
             console.log(points, evt);
         };
     });
+    app.controller('recommendToFriend', function ($scope) {
+        $scope.show = (localStorage.getItem('login') === null)? true :false;
+        $scope.recommend = {
+                login: localStorage.getItem('login'),
+                name:  localStorage.getItem('name'),
+                socialMedia: localStorage.getItem('socialMedia')
+    }
+    });
+
+    //app.controller('AlertDemoCtrl', function ($scope) {
+    //    $scope.alerts = [
+    //        {type: 'success', msg: 'Thank you for your recommendation' }
+    //    ];
+    //
+    //    $scope.closeAlert = function(index) {
+    //        $scope.alerts.splice(index, 1);
+    //    };
+    //});
 })();

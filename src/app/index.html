@@ -19,6 +19,9 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
 
+
+
+
     <!-- App module -->
     <script type="text/javascript" src="app.js"></script>
 </head>
@@ -68,10 +71,40 @@
             <div class="col-xs-12 col-sm-4 col-md-4 exampleChart"><p>Euro {{val3}}</p></div>
         </section>
 
-        <footer>
-            <h3>footer</h3>
+        <footer ng-controller= 'recommendToFriend'>
+
+            <div  ng-hide="show" class="ng-hide">You recommend this application to {{recommend.name}} (login: {{recommend.login}}) on {{recommend.socialMedia}} Thanks! </div>
+
+            <div id="alert"></div>
+            <form id='form' ng-show="show" class="ng-show col-xs-12 col-sm-4 col-md-4">
+
+                <h3>If you want to recommend our application, please fill out form below!</h3>
+                <fieldset class="form-group">
+                    <label>Login</label>
+                <span>
+                    <input id="login" class="form-control" type="text" size="15"  value="">
+                </span>
+                    <label>Name</label>
+                <span>
+                    <input id="name" class="form-control" type="text" size="15"  value="">
+                </span>
+                    <label>Social Media</label>
+                <span>
+                    <select class="form-control" id="socialMedia">
+                        <option>Facebook</option>
+                        <option>Twitter</option>
+                        <option>Google +</option>
+                        <option>LinkedIn</option>
+                    </select>
+                </span>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <!--<input type="button" onclick="clearCookies();" value="Clear Cookies"></span>-->
+                </fieldset>
+            </form>
         </footer>
     </div>
 </div>
+<script src="js/friends-recommendation.js"></script>
 </body>
 </html>
