@@ -9,8 +9,6 @@ section, footer{
     border: 1px solid grey;
 }
 
-/*FRIENDS RECOMMENDATION*/
-form h3 {
 .logo-in-menu {
     opacity: 1;
     height: 40px;
@@ -19,7 +17,8 @@ form h3 {
     float: left;
     transition-duration: 100ms;
 }
-
+/*FRIENDS RECOMMENDATION*/
+form h3 {
     font-size: 16px;
     font-weight: 600;
     color: #001038;
