@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.css"/>
     <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
     <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
     <link href="style/css/style.css" rel="stylesheet">
@@ -19,19 +19,14 @@
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
 
 
-
-
     <!-- App module -->
     <script type="text/javascript" src="app.js"></script>
 </head>
 <body>
 
 <div class="container" ng-controller="BaseController">
-    <div class="header clearfix text-center">
-        <h1 class="text-muted">Task</h1>
-    </div>
 
-    <div class="container-fluid">
+    <div class="container">
         <section>
             <h3>Menu</h3>
         </section>
@@ -57,19 +52,19 @@
             <h3>Table with currencies</h3>
 
         </section>
-        <section ng-controller="LineCtrl">
+        <section id="chartSection" ng-controller="LineCtrl">
             <h3>Charts</h3>
 
             <div class="col-xs-12 col-sm-4 col-md-4 exampleChart"><p>Dollar {{val1}}</p>
                 <canvas id="line" class="chart chart-line" chart-data="data"
                         chart-labels="labels" chart-legend="true" chart-series="series"
-                        chart-click="onClick" >
+                        chart-click="onClick">
                 </canvas>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 exampleChart"><p>Pound {{val2}}</p>
                 <canvas id="line-two" class="chart chart-line" chart-data="data"
                         chart-labels="labels" chart-legend="true" chart-series="series"
-                        chart-click="onClick" >
+                        chart-click="onClick">
                 </canvas>
 
 
@@ -78,43 +73,55 @@
             <div class="col-xs-12 col-sm-4 col-md-4 exampleChart"><p>Euro {{val3}}</p>
                 <canvas id="line-three" class="chart chart-line" chart-data="data"
                         chart-labels="labels" chart-legend="true" chart-series="series"
-                        chart-click="onClick" >
+                        chart-click="onClick">
                 </canvas>
 
 
             </div>
 
         </section>
+        <br>
+        <br>
+        <footer ng-controller='recommendToFriend'>
 
-        <footer ng-controller= 'recommendToFriend'>
+            <div id="recommend" ng-hide="show" class="ng-hide">
+                <p>You recommend this application to <span>{{recommend.name}}</span>
+                    (login: {{recommend.login}}) on {{recommend.socialMedia}}. <span>Thanks!</span>
+                </p>
 
-            <div  ng-hide="show" class="ng-hide">You recommend this application to {{recommend.name}} (login: {{recommend.login}}) on {{recommend.socialMedia}} Thanks! </div>
+            </div>
 
             <div id="alert"></div>
-            <form id='form' ng-show="show" class="ng-show col-xs-12 col-sm-4 col-md-4">
+            <form id='form' ng-show="show" class="ng-show">
 
                 <h3>If you want to recommend our application, please fill out form below!</h3>
                 <fieldset class="form-group">
-                    <label>Login</label>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <label>Login</label>
                 <span>
-                    <input id="login" class="form-control" type="text" size="15"  value="">
+                    <input id="login" class="form-control" type="text" size="15" value="">
                 </span>
-                    <label>Name</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <label>Name</label>
                 <span>
-                    <input id="name" class="form-control" type="text" size="15"  value="">
+                    <input id="name" class="form-control" type="text" size="15" value="">
                 </span>
-                    <label>Social Media</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <label>Social Media</label>
                 <span>
                     <select class="form-control" id="socialMedia">
                         <option>Facebook</option>
-                        <option>Twitter</option>
                         <option>Google +</option>
+                        <option>Twitter</option>
                         <option>LinkedIn</option>
                     </select>
                 </span>
+                    </div>
                     <br>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                    <!--<input type="button" onclick="clearCookies();" value="Clear Cookies"></span>-->
+                    <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Filll out all fields in form to save recommendation">Save</button>
+
                 </fieldset>
             </form>
         </footer>

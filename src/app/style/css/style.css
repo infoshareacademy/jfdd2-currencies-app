@@ -1,12 +1,7 @@
 
 section, footer{
-    border: 1px solid lightgray;
-    clear: both;
-}
- /*FRIENDS RECOMMENDATION*/
 
-button, label{
-    margin-left: 10px;
+    clear: both;
 }
 .exampleIcon {
     height: 50px;
@@ -14,3 +9,44 @@ button, label{
     border: 1px solid grey;
 }
 
+/*FRIENDS RECOMMENDATION*/
+form h3 {
+
+    font-size: 16px;
+    font-weight: 600;
+    color: #001038;
+    text-align: center;
+}
+
+label{
+    margin: 5px;
+    color: #001038;
+}
+
+button{
+    margin: 15px 15px;
+}
+
+#recommend{
+    background-color: #75A3C1;
+    border-radius: 10px 10px;
+    min-height: 40px;
+}
+#recommend p{
+    color: white;
+    line-height: 40px;
+    font-style: italic;
+    text-align: center;
+}
+#recommend span{
+    font-weight: 600;
+}
+
+#alert{
+    background-color: lightgreen;
+    border-radius: 10px 10px;
+}
+#alert p {
+    color: grey;
+    text-align: center;
+}

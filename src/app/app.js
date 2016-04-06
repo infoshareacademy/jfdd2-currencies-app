@@ -20,7 +20,7 @@
         };
     });
     app.controller('recommendToFriend', function ($scope) {
-        $scope.show = (localStorage.getItem('login') === null)? true :false;
+        $scope.show = (localStorage.getItem('login') === null);
         $scope.recommend = {
                 login: localStorage.getItem('login'),
                 name:  localStorage.getItem('name'),
@@ -28,13 +28,4 @@
     }
     });
 
-    //app.controller('AlertDemoCtrl', function ($scope) {
-    //    $scope.alerts = [
-    //        {type: 'success', msg: 'Thank you for your recommendation' }
-    //    ];
-    //
-    //    $scope.closeAlert = function(index) {
-    //        $scope.alerts.splice(index, 1);
-    //    };
-    //});
 })();
