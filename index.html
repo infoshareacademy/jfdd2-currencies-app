@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Currency App</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
+    <link href="styles/style.css" rel="stylesheet">
 
 </head>
 <body>
@@ -44,10 +44,36 @@
     </section>
 
     <footer>
-        <h3>footer</h3>
+        {{recommend}}
+        <form id='form' class="col-xs-12 col-sm-4 col-md-4">
+            <fieldset class="form-group">
+                <label>Login</label>
+                <span>
+                    <input id="login" class="form-control" type="text" size="15"  value="">
+                </span>
+                <label>Name</label>
+                <span>
+                    <input id="name" class="form-control" type="text" size="15"  value="">
+                </span>
+                <label>Social Media</label>
+                <span>
+                    <select class="form-control" id="socialMedia">
+                        <option>Facebook</option>
+                        <option>Twitter</option>
+                        <option>Google +</option>
+                        <option>LinkedIn</option>
+                    </select>
+                </span>
+                <br>
+                    <button type="submit" class="btn btn-primary" onclick="store()">Save</button>
+                    <!--<input type="button" onclick="clearCookies();" value="Clear Cookies"></span>-->
+             </fieldset>
+        </form>
+
+
     </footer>
 </div>
 <script src="javascript/jquery-2.1.4.js"></script>
-<script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+
 </body>
 </html>
