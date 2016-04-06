@@ -19,4 +19,13 @@
             console.log(points, evt);
         };
     });
+    app.controller('recommendToFriend', function ($scope) {
+        $scope.show = (localStorage.getItem('login') === null);
+        $scope.recommend = {
+                login: localStorage.getItem('login'),
+                name:  localStorage.getItem('name'),
+                socialMedia: localStorage.getItem('socialMedia')
+    }
+    });
+
 })();
