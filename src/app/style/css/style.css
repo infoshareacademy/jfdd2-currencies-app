@@ -8,14 +8,9 @@ section, footer{
 button, label{
     margin-left: 10px;
 }
-
 .exampleIcon {
     height: 50px;
     background: lightgray;
-    border: 1px solid grey;
-}
-.exampleChart {
-    background: lightcyan;
     border: 1px solid grey;
 }
 

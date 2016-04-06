@@ -2,7 +2,9 @@
     var app = angular.module('Workshop', ['chart.js', 'ui.bootstrap']);
 
     app.controller('BaseController', function ($scope) {
-        $scope.val1 = 'hello'
+        $scope.val1 = 'Chart';
+        $scope.val2= 'Chart';
+        $scope.val3= 'Chart'
     });
 
     app.controller("LineCtrl", function ($scope) {
