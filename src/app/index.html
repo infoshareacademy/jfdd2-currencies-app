@@ -2,6 +2,7 @@
 <html lang="en" ng-app="Workshop">
 <head>
     <meta charset="UTF-8">
+    <meta name="google-signin-client_id" content="889971733451-rc0jkdgds285v8j9j130vh93a2eetcs7.apps.googleusercontent.com">
 
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="style/css/bootstrap.css"/>
@@ -29,6 +30,8 @@
     <div class="container">
         <section>
             <h3>Menu</h3>
+            <div id="my-signin2"></div>
+            <div  class="ng-show" id="logAs"></div>
         </section>
         <section>
             <h3>Icon select</h3>
@@ -127,6 +130,8 @@
         </footer>
     </div>
 </div>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+<script src="js/googlePlus.js"></script>
 <script src="js/friends-recommendation.js"></script>
 </body>
 </html>
