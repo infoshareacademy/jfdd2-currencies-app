@@ -14,3 +14,11 @@ menu, section, footer{
     border: 1px solid grey;
 }
 
+.logo-in-menu {
+    opacity: 1;
+    height: 40px;
+    width: auto;
+    margin: 10px 16px 10px 10px;
+    float: left;
+    transition-duration: 100ms;
+}
