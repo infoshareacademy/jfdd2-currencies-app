@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.css"/>
     <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
     <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
     <link href="style/css/style.css" rel="stylesheet">
@@ -24,6 +24,7 @@
 </head>
 <body>
 
+<div class="container" ng-controller="BaseController">
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -45,6 +46,7 @@
             <a href="#"><img class="logo-in-menu" src="../images/logo-sm.png" alt="logo"></a>
         </div>
 
+    <div class="container">
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -104,19 +106,19 @@
             <h3>Table with currencies</h3>
 
         </section>
-        <section ng-controller="LineCtrl">
+        <section id="chartSection" ng-controller="LineCtrl">
             <h3>Charts</h3>
 
             <div class="col-xs-12 col-sm-4 col-md-4 exampleChart"><p>Dollar {{val1}}</p>
                 <canvas id="line" class="chart chart-line" chart-data="data"
                         chart-labels="labels" chart-legend="true" chart-series="series"
-                        chart-click="onClick" >
+                        chart-click="onClick">
                 </canvas>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 exampleChart"><p>Pound {{val2}}</p>
                 <canvas id="line-two" class="chart chart-line" chart-data="data"
                         chart-labels="labels" chart-legend="true" chart-series="series"
-                        chart-click="onClick" >
+                        chart-click="onClick">
                 </canvas>
 
 
@@ -125,19 +127,59 @@
             <div class="col-xs-12 col-sm-4 col-md-4 exampleChart"><p>Euro {{val3}}</p>
                 <canvas id="line-three" class="chart chart-line" chart-data="data"
                         chart-labels="labels" chart-legend="true" chart-series="series"
-                        chart-click="onClick" >
+                        chart-click="onClick">
                 </canvas>
 
 
             </div>
 
         </section>
+        <br>
+        <br>
+        <footer ng-controller='recommendToFriend'>
 
-        <footer>
-            <h3>footer</h3>
+            <div id="recommend" ng-hide="show" class="ng-hide">
+                <p>You recommend this application to <span>{{recommend.name}}</span>
+                    (login: {{recommend.login}}) on {{recommend.socialMedia}}. <span>Thanks!</span>
+                </p>
+
+            </div>
+
+            <div id="alert"></div>
+            <form id='form' ng-show="show" class="ng-show">
+
+                <h3>If you want to recommend our application, please fill out form below!</h3>
+                <fieldset class="form-group">
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <label>Login</label>
+                <span>
+                    <input id="login" class="form-control" type="text" size="15" value="">
+                </span>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <label>Name</label>
+                <span>
+                    <input id="name" class="form-control" type="text" size="15" value="">
+                </span>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <label>Social Media</label>
+                <span>
+                    <select class="form-control" id="socialMedia">
+                        <option>Facebook</option>
+                        <option>Google +</option>
+                        <option>Twitter</option>
+                        <option>LinkedIn</option>
+                    </select>
+                </span>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Filll out all fields in form to save recommendation">Save</button>
+
+                </fieldset>
+            </form>
         </footer>
 </div>
-
-
+<script src="js/friends-recommendation.js"></script>
 </body>
 </html>
