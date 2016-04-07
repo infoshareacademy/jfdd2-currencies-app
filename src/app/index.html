@@ -20,6 +20,7 @@
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
 
 
+
     <!-- App module -->
     <script type="text/javascript" src="app.js"></script>
 </head>
@@ -27,11 +28,13 @@
 
 <div class="container" ng-controller="BaseController">
 
-    <div class="container">
+    <div class="container" ng-controller="logOut">
         <section>
             <h3>Menu</h3>
             <div id="my-signin2"></div>
             <div  class="ng-show" id="logAs"></div>
+            <button id ="logOut" type="submit" class="btn btn-default " ng-click="sighOut()">Log Out</button>
+
         </section>
         <section>
             <h3>Icon select</h3>

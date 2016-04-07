@@ -8,7 +8,9 @@ section, footer{
     background: lightgray;
     border: 1px solid grey;
 }
-
+#logOut{
+    display: none;
+}
 /*FRIENDS RECOMMENDATION*/
 form h3 {
 

@@ -1,3 +1,4 @@
+
 (function(){
     var app = angular.module('Workshop', ['chart.js', 'ui.bootstrap']);
 
@@ -6,6 +7,20 @@
         $scope.val2= 'Chart';
         $scope.val3= 'Chart'
     });
+    app.controller('logOut', logOut);
+
+    function logOut ($scope){
+
+        $scope.sighOut = function () {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+
+            });
+
+            location.reload();
+        }
+    }
 
     app.controller("LineCtrl", function ($scope) {
 
