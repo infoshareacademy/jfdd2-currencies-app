@@ -18,7 +18,6 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
 
-
     <!-- App module -->
     <script type="text/javascript" src="app.js"></script>
 </head>
@@ -51,9 +50,9 @@
         <section>
             <header class="finanse"></header>
             <h3>Finanse</h3>
-            <iframe src="http://www.exchangerates.org.uk/widget/ER-LRTICKER.php?w=960&amp;s=1&amp;mc=GBP&amp;mbg=FFFFFF&amp;bs=no&amp;bc=FFFFFF&amp;f=verdana&amp;fs=10px&amp;fc=000044&amp;lc=036EB4&amp;lhc=06aee5&amp;vc=06AEE5&amp;vcu=008000&amp;vcd=ff0000"
-                    width="960" height="30" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe>
 
+            <iframe class="col-xs-12 col-sm-12 col-md-12" src="http://www.exchangerates.org.uk/widget/ER-LRTICKER.php?w=960&amp;s=1&amp;mc=GBP&amp;mbg=FFFFFF&amp;bs=no&amp;bc=FFFFFF&amp;f=verdana&amp;fs=10px&amp;fc=000044&amp;lc=036EB4&amp;lhc=06aee5&amp;vc=06AEE5&amp;vcu=008000&amp;vcd=ff0000"
+                    width="960" height="30" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe>
 
         </section>
         <section id="chartSection" ng-controller="LineCtrl">
@@ -130,6 +129,8 @@
 
                 </fieldset>
             </form>
+
+
         </footer>
     </div>
 </div>
