@@ -4,7 +4,8 @@
     app.controller('BaseController', function ($scope) {
         $scope.val1 = 'Chart';
         $scope.val2= 'Chart';
-        $scope.val3= 'Chart'
+        $scope.val3= 'Chart';
+        $scope.val4= 'Chart'
     });
 
     app.controller("LineCtrl", function ($scope) {
