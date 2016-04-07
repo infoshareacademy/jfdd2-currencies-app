@@ -11,9 +11,20 @@ section, footer{
 #logOut{
     display: none;
 }
+
+.logo-in-menu {
+    opacity: 1;
+    height: 40px;
+    width: auto;
+    margin: 10px 16px 10px 10px;
+    float: left;
+    transition-duration: 100ms;
+}
+.navbar-default {
+    background-color: blue;
+}
 /*FRIENDS RECOMMENDATION*/
 form h3 {
-
     font-size: 16px;
     font-weight: 600;
     color: #001038;
