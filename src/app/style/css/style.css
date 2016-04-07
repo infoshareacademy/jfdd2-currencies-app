@@ -1,4 +1,10 @@
-
+#modal {
+    height: 7000px;
+    width: 100%;
+    display: block;
+    border: 5px solid red;
+    background-color: white;
+}
 section, footer{
 
     clear: both;
@@ -14,7 +20,6 @@ section, footer{
 #logAs {
     float: right;
     color: white;
-    border: 1px solid red;
 }
 
 .logo-in-menu {

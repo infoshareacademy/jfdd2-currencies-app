@@ -23,7 +23,11 @@
     <script type="text/javascript" src="app.js"></script>
 </head>
 <body>
-
+<div class="container" ng-controller="logOut">
+    <div id="modal">
+        <div id="my-signin2"></div>
+    </div>
+</div>
 <div class="container" ng-controller="BaseController ">
     <nav class="navbar navbar-inverse ">
         <div class="container-fluid">
@@ -37,12 +41,18 @@
                     <span class="icon-bar"></span>
                 </button>
 
-    <div class="container" ng-controller="logOut">
-        <section>
-            <div id="my-signin2"></div>
-            <div  class="ng-show" id="logAs"></div>
 
-        </section>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
                 <a href="#"><img class="logo-in-menu" src="../images/logo-sm.png" alt="logo"></a>
@@ -57,11 +67,16 @@
                         <li class="dropdown dropdown-inverse">
                         <li><a href="#">Charts</a></li>
                         <li><a href="#">Currencies</a></li>
+                        <li>
+                            <!--<div id="my-signin2"></div>-->
+                            <div  class="ng-show" id="logAs"></div>
+
+                        </li>
                     </ul>
 
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
-   </div>
+
             </div>
     </nav>
     <div class="container-fluid">
