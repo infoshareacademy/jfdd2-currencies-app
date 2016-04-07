@@ -1,22 +1,4 @@
 
-section, footer{
-
-    clear: both;
-}
-.exampleIcon {
-    height: 50px;
-    background: lightgray;
-    border: 1px solid grey;
-}
-#logOut{
-    display: none;
-}
-#logAs {
-    float: right;
-    color: white;
-    border: 1px solid red;
-}
-
 .logo-in-menu {
     opacity: 1;
     height: 40px;
@@ -28,6 +10,36 @@ section, footer{
 .navbar-default {
     background-color: blue;
 }
+#logOut{
+    display: none;
+}
+#logAs {
+    float: right;
+    color: white;
+    border: 1px solid red;
+}
+ /*IKONY WALUT*/
+#icons{
+    text-align: center;
+}
+
+.iconDiv h1 {
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 600;
+    color: #1D3961;
+}
+
+.iconDiv p {
+    color: #1D3961;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+}
+.liked {
+ color : #0DC957 !important;
+}
+
 /*FRIENDS RECOMMENDATION*/
 form h3 {
     font-size: 16px;
@@ -72,4 +84,8 @@ button{
 #alert p {
     color: grey;
     text-align: center;
+}
+
+footer , section{
+    clear: both;
 }
