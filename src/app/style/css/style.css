@@ -11,6 +11,11 @@ section, footer{
 #logOut{
     display: none;
 }
+#logAs {
+    float: right;
+    color: white;
+    border: 1px solid red;
+}
 
 .logo-in-menu {
     opacity: 1;
@@ -40,19 +45,24 @@ button{
     margin: 15px 15px;
 }
 
-#recommend{
+#recommendDiv{
     background-color: #75A3C1;
     border-radius: 10px 10px;
     min-height: 40px;
 }
-#recommend p{
+#recommendDiv p{
     color: white;
     line-height: 40px;
     font-style: italic;
     text-align: center;
 }
-#recommend span{
+#recommendDiv span{
     font-weight: 600;
+}
+#cancelRecommend {
+    margin : 0 0 0 15px;
+    color: grey;
+
 }
 
 #alert{

@@ -41,6 +41,11 @@
                 name:  localStorage.getItem('name'),
                 socialMedia: localStorage.getItem('socialMedia')
     }
+        $scope.cancelRecommmend = function(){
+            localStorage.clear();
+            $('#recommendDiv').css({'display': 'none'});
+            $scope.show = true;
+        }
     });
 
 })();
