@@ -2,13 +2,13 @@
 <html lang="en" ng-app="Workshop">
 <head>
     <meta charset="UTF-8">
+    <meta name="google-signin-client_id" content="889971733451-rc0jkdgds285v8j9j130vh93a2eetcs7.apps.googleusercontent.com">
 
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="style/css/bootstrap.css"/>
     <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
     <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
     <link href="style/css/style.css" rel="stylesheet">
-    <link href="style/css/reset.css">
 
     <!-- Scripts -->
     <script type="text/javascript" src="js/jquery.js"></script>
@@ -24,7 +24,7 @@
 </head>
 <body>
 
-<div class="container-fluid" ng-controller="BaseController">
+<div class="container" ng-controller="BaseController ">
     <nav class="navbar navbar-inverse ">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -37,6 +37,12 @@
                     <span class="icon-bar"></span>
                 </button>
 
+    <div class="container" ng-controller="logOut">
+        <section>
+            <div id="my-signin2"></div>
+            <div  class="ng-show" id="logAs"></div>
+
+        </section>
 
 
                 <a href="#"><img class="logo-in-menu" src="../images/logo-sm.png" alt="logo"></a>
@@ -44,10 +50,10 @@
 
             <div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse olaf" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse olaf" id="bs-example-navbar-collapse-1" ng-controller="logOut">
                     <ul class="nav navbar-nav">
                         <!--<li class="active"><a href="#">Currencies <span class="sr-only">(current)</span></a></li>-->
-                        <li>      <button type="button" class="btn btn-default navbar-btn">Sign out</button></li>
+                        <li><button id ="logOut" type="submit"  ng-click="sighOut()" class="btn btn-default navbar-btn">Sign out</button></li>
                         <li class="dropdown dropdown-inverse">
                         <li><a href="#">Charts</a></li>
                         <li><a href="#">Currencies</a></li>
@@ -56,39 +62,24 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
    </div>
-    </nav>
-    <div class="container-fluid">
-        <section>
-            <h3>Icon select</h3>
-            <!--<img src="../images/flag-usa.png" class="img-responsive" style="opacity: 0.3">-->
-            <div>
-                <div class=>
-                    <!--<div class="col-xs-6 col-sm-4 col-md-3 icons exampleIcon"><img src="../images/flag-usa.png"></div>-->
-                    <!--<div class="col-xs-6 col-sm-4 col-md-3 icons exampleIcon"></div>-->
-                    <!--<div class="col-xs-6 col-sm-4 col-md-3 icons exampleIcon"></div>-->
-                    <!--<div class="col-xs-6 col-sm-4 col-md-3 icons exampleIcon"></div>-->
-                    <!--<div class="col-xs-6 col-sm-4 col-md-3 icons exampleIcon"></div>-->
-                    <!--<div class="col-xs-6 col-sm-4 col-md-3 icons exampleIcon"></div>-->
-                    <!--<div class="col-xs-6 col-sm-4 col-md-3 icons exampleIcon"></div>-->
-                    <!--<div class="col-xs-6 col-sm-4 col-md-3 icons exampleIcon"></div>-->
-                    <!--<div class="col-xs-6 col-sm-4 col-md-3 icons exampleIcon"></div>-->
-                    <!--<div class="col-xs-6 col-sm-4 col-md-3 icons exampleIcon"></div>-->
-                </div>
             </div>
-            <ul>
-                <li class="ikonyy"><h1 style="font-size: 80px; text-align: center">$</h1><p style="text-align: center; font-size: 22px">US DOLLAR</p></li>
-                <li class="ikonyy"><h1 style="font-size: 80px; text-align: center">€</h1><p style="text-align: center; font-size: 22px">EURO</p></li>
-                <li class="ikonyy"><h1 style="font-size: 80px; text-align: center">£</h1><p style="text-align: center; font-size: 22px">UK POUND</p></li>
-                <li class="ikonyy"><h1 style="font-size: 80px; text-align: center">¥</h1><p style="text-align: center; font-size: 22px">JAPAN YEN</p></li>
-                <li class="ikonyy"><h1 style="font-size: 80px; text-align: center">CHF</h1><p style="text-align: center; font-size: 22px">SWITZERLAND FRANK</p></li>
-                <li class="ikonyy"><h1 style="font-size: 80px; text-align: center">$</h1><p style="text-align: center; font-size: 22px">CANADA DOLLAR</p></li>
-                <li class="ikonyy"><h1 style="font-size: 80px; text-align: center">kr</h1><p style="text-align: center; font-size: 22px">SWEDEN CORONA</p></li>
-                <li class="ikonyy"><h1 style="font-size: 80px; text-align: center">Kč</h1><p style="text-align: center; font-size: 22px">CZECH KORUNA</p></li>
-                <li class="ikonyy"><h1 style="font-size: 80px; text-align: center">kr</h1><p style="text-align: center; font-size: 22px">NORWAY KRONE</p></li>
-                <li class="ikonyy"><h1 style="font-size: 80px; text-align: center">Ft</h1><p style="text-align: center; font-size: 22px">HUNGARY FORINT</p></li>
+    </nav>
+    <div class="container">
+        <section id="icons" ng-controller="likedIcon">
 
-            </ul>
+                <div id="usDollar"  class="iconDiv  col-xs-6 col-sm-4  "><h1>$  </h1><p>US dollar</p></div>
+                <div id="euro"  class="iconDiv  col-xs-6 col-sm-4  "><h1>€  </h1><p>Euro</p></div>
+                <div id="pound"  class="iconDiv  col-xs-6 col-sm-4  "><h1>£  </h1><p>British pound</p></div>
+                <div id="yen"  class="iconDiv  col-xs-6 col-sm-4  "><h1>¥  </h1><p>Japanese yen</p></div>
+                <div id="franc"  class="iconDiv  col-xs-6 col-sm-4  "><h1>Fr</h1><p>Swiss franc</p></div>
+                <div id="canDollar"  class="iconDiv  col-xs-6 col-sm-4  "><h1>$  </h1><p>Canadian dollar</p></div>
+                <div id="korona"  class="iconDiv  col-xs-6 col-sm-4  "><h1>kr </h1><p>Swedish krona</p></div>
+                <div id="koruna"  class="iconDiv  col-xs-6 col-sm-4  "><h1>Kč </h1><p>Czech koruna</p></div>
+                <div id="krone"  class="iconDiv  col-xs-6 col-sm-4  "><h1>kr </h1><p>Norwegian krone</p></div>
+                <div id="forint"  class="iconDiv  col-xs-6 col-sm-4  "><h1>Ft </h1><p>Hungarian forint</p></div>
+            </section>
         </section>
+
         <section>
             <header class="finanse"></header>
 
@@ -96,7 +87,9 @@
                     width="960" height="30" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe>
 
         </section>
+
         <section id="chartSection" ng-controller="LineCtrl">
+
 
             <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p>Dollar {{val1}}</p>
                 <canvas id="line" class="chart chart-line" chart-data="data"
@@ -135,9 +128,10 @@
         <br>
         <footer ng-controller='recommendToFriend'>
 
-            <div id="recommend" ng-hide="show" class="ng-hide">
-                <p>You recommend this application to <span>{{recommend.name}}</span>
+            <div id="recommendDiv" ng-hide="show" class="ng-hide">
+                <p id="recommend">You recommend this application to <span>{{recommend.name}}</span>
                     (login: {{recommend.login}}) on {{recommend.socialMedia}}. <span>Thanks!</span>
+                    <button id ="cancelRecommend" type="submit" class="btn btn-default " ng-click="cancelRecommmend()">Cancel</button>
                 </p>
 
             </div>
@@ -171,17 +165,16 @@
                 </span>
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="right"
-                            title="Filll out all fields in form to save recommendation">Save
-                    </button>
+                    <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Filll out all fields in form to save recommendation">Save</button>
 
                 </fieldset>
             </form>
-
-
         </footer>
     </div>
-    </div>
-    <script src="js/friends-recommendation.js"></script>
+</div>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+<script src="js/googlePlus.js"></script>
+<script src="js/friends-recommendation.js"></script>
+<script src="js/liked.js"></script>
 </body>
 </html>

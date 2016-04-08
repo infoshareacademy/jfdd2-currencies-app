@@ -1,23 +1,4 @@
 
-section, footer{
-
-    clear: both;
-}
-.exampleIcon {
-    background: lightgray;
-    border: 1px solid grey;
-    display: inline-block;
-}
-
-.ikonyy {
-    display: inline-block;
-    width: 250px;
-    background-color: #e9e9e9;
-    border: #292929;
-    border-radius: 5px;
-    margin: 4px;
-}
-
 .logo-in-menu {
     opacity: 1;
     height: 40px;
@@ -29,6 +10,37 @@ section, footer{
 .navbar-default {
     background-color: blue;
 }
+#logOut{
+    display: none;
+}
+#logAs {
+    float: right;
+    color: white;
+    border: 1px solid red;
+}
+ /*IKONY WALUT*/
+#icons{
+    text-align: center;
+}
+
+.iconDiv h1 {
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 600;
+    color: #1D3961;
+}
+
+.iconDiv p {
+    color: #1D3961;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+}
+.liked {
+  color : #0DC957 !important;
+}
+
+
 /*FRIENDS RECOMMENDATION*/
 form h3 {
     font-size: 16px;
@@ -46,19 +58,24 @@ button{
     margin: 15px 15px;
 }
 
-#recommend{
+#recommendDiv{
     background-color: #75A3C1;
     border-radius: 10px 10px;
     min-height: 40px;
 }
-#recommend p{
+#recommendDiv p{
     color: white;
     line-height: 40px;
     font-style: italic;
     text-align: center;
 }
-#recommend span{
+#recommendDiv span{
     font-weight: 600;
+}
+#cancelRecommend {
+    margin : 0 0 0 15px;
+    color: grey;
+
 }
 
 #alert{
@@ -68,4 +85,8 @@ button{
 #alert p {
     color: grey;
     text-align: center;
+}
+
+footer , section{
+    clear: both;
 }
