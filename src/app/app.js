@@ -13,7 +13,7 @@
         $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
         $scope.series = ['Currency Swings'];
         $scope.data = [
-            [100, 59, 80, 81, 56, 55, 0]
+            [100, 25, 80, 15, 90, 5, 50]
 
         ];
         $scope.onClick = function (points, evt) {
