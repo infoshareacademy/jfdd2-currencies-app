@@ -20,6 +20,15 @@
     margin-top:15px;
 }
  /*IKONY WALUT*/
+#iconTitle{
+    font-family: serif;
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+    color: #001038;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
 #icons{
     text-align: center;
 }
@@ -40,14 +49,34 @@
 .liked {
   color : #0DC957 !important;
 }
-
+/* CHARTS */
+.chartTitle{
+    font-family: serif;
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+    color: #001038;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.chartPara{
+    font-family: serif;
+    font-weight: 600;
+    text-align: center;
+    color: #001038;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
 
 /*FRIENDS RECOMMENDATION*/
 form h3 {
-    font-size: 16px;
+     font-family: serif;
+    font-style: italic;
     font-weight: 600;
-    color: #001038;
     text-align: center;
+    color: #001038;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 label{
@@ -55,6 +84,9 @@ label{
     color: #001038;
 }
 
+form button{
+    margin: 15px 15px;
+}
 
 #recommendDiv{
     background-color: #75A3C1;
