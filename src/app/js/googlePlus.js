@@ -4,7 +4,7 @@ function onSuccess(googleUser) {
   console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
   var $logAs = $("<p>").addClass('logAs').text('Logged in as: '+ googleUser.getBasicProfile().getName());
   $('#logAs').append($logAs);
-  $('#my-signin2').css({'display': 'none'});
+  $('#loginWindow, #backcover').css({'display': 'none'});
   $('#logOut').css({'display': 'block'});
 }
 function onFailure(error) {

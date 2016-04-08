@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
     <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
     <link href="style/css/style.css" rel="stylesheet">
+    <link href="style/css/loginPopUp.css">
 
     <!-- Scripts -->
     <script type="text/javascript" src="js/jquery.js"></script>
@@ -23,6 +24,12 @@
     <script type="text/javascript" src="app.js"></script>
 </head>
 <body>
+
+<div id="backcover"></div>
+<div id="loginWindow">
+        <div id="my-signin2"></div>
+</div>
+
 
 <div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -88,12 +95,10 @@
                     <ul class="nav navbar-nav navbar-right">
 
                         <li class="dropdown dropdown-inverse">
-                        <section>
-                            <section>
+                            <section class="login">
                                 <div id="my-signin2"></div>
 
                             </section>
-                        </section>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -208,6 +213,7 @@
         </footer>
     </div>
 </div>
+
 <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 <script src="js/googlePlus.js"></script>
 <script src="js/friends-recommendation.js"></script>
