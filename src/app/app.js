@@ -48,7 +48,12 @@
         }
     });
     app.controller('likedIcon', function ($scope) {
-       // $scope.showIcon = localStorage.getItem('pound') === null;
+      console.log(localStorage.length);
+      if(localStorage.length > 3) {
+        $('div.iconDiv').hide();
+        for (var i = 0; i < localStorage.length; i++) {
+          $('#' + localStorage.getItem(localStorage.key(i))).show().addClass('iconAlign');
+        }
+      }
     });
-
 })();
