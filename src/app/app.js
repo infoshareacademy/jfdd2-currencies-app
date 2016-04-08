@@ -5,7 +5,8 @@
     app.controller('BaseController', function ($scope) {
         $scope.val1 = 'Chart';
         $scope.val2= 'Chart';
-        $scope.val3= 'Chart'
+        $scope.val3= 'Chart';
+        $scope.val4= 'Chart'
     });
     app.controller('logOut', logOut);
 
@@ -25,10 +26,11 @@
     app.controller("LineCtrl", function ($scope) {
 
         $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-        $scope.series = ['Series A', 'Series B'];
+        $scope.series = ['Currency Swings'];
         $scope.data = [
-            [65, 59, 80, 81, 56, 55, 40],
-            [28, 48, 40, 19, 86, 27, 90]
+            [100, 25, 80, 15, 90, 5, 50]
+
+
         ];
         $scope.onClick = function (points, evt) {
             console.log(points, evt);

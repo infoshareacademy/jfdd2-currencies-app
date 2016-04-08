@@ -66,7 +66,7 @@
     </nav>
     <div class="container">
         <section id="icons" ng-controller="likedIcon">
-            
+
                 <div id="usDollar"  class="iconDiv  col-xs-6 col-sm-4  "><h1>$  </h1><p>US dollar</p></div>
                 <div id="euro"  class="iconDiv  col-xs-6 col-sm-4  "><h1>€  </h1><p>Euro</p></div>
                 <div id="pound"  class="iconDiv  col-xs-6 col-sm-4  "><h1>£  </h1><p>British pound</p></div>
@@ -81,19 +81,23 @@
         </section>
 
         <section>
+            <header class="finanse"></header>
+
+            <iframe class="col-xs-12 col-sm-12 col-md-12" src="http://www.exchangerates.org.uk/widget/ER-LRTICKER.php?w=960&amp;s=1&amp;mc=GBP&amp;mbg=FFFFFF&amp;bs=no&amp;bc=FFFFFF&amp;f=verdana&amp;fs=10px&amp;fc=000044&amp;lc=036EB4&amp;lhc=06aee5&amp;vc=06AEE5&amp;vcu=008000&amp;vcd=ff0000"
+                    width="960" height="30" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe>
 
         </section>
 
         <section id="chartSection" ng-controller="LineCtrl">
 
 
-            <div class="col-xs-12 col-sm-4 col-md-4 exampleChart"><p>Dollar {{val1}}</p>
+            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p>Dollar {{val1}}</p>
                 <canvas id="line" class="chart chart-line" chart-data="data"
                         chart-labels="labels" chart-legend="true" chart-series="series"
                         chart-click="onClick">
                 </canvas>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 exampleChart"><p>Pound {{val2}}</p>
+            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p>Pound {{val2}}</p>
                 <canvas id="line-two" class="chart chart-line" chart-data="data"
                         chart-labels="labels" chart-legend="true" chart-series="series"
                         chart-click="onClick">
@@ -102,12 +106,20 @@
 
             </div>
 
-            <div class="col-xs-12 col-sm-4 col-md-4 exampleChart"><p>Euro {{val3}}</p>
+            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p>Euro {{val3}}</p>
                 <canvas id="line-three" class="chart chart-line" chart-data="data"
                         chart-labels="labels" chart-legend="true" chart-series="series"
                         chart-click="onClick">
                 </canvas>
 
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p> Pln {{val4}}</p>
+                <canvas id="line-four" class="chart chart-line" chart-data="data"
+                        chart-labels="labels" chart-legend="true" chart-series="series"
+                        chart-click="onClick">
+                </canvas>
 
             </div>
 
