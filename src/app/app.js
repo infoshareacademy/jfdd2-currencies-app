@@ -47,5 +47,8 @@
             $scope.show = true;
         }
     });
+    app.controller('likedIcon', function ($scope) {
+       // $scope.showIcon = localStorage.getItem('pound') === null;
+    });
 
 })();
