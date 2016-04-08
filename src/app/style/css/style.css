@@ -10,13 +10,14 @@
 .navbar-default {
     background-color: blue;
 }
+
 #logOut{
     display: none;
 }
 #logAs {
-    float: right;
-    color: white;
-    border: 1px solid red;
+
+    color: #9d9d9d;
+    margin-top:15px;
 }
  /*IKONY WALUT*/
 #icons{
@@ -53,9 +54,6 @@ label{
     color: #001038;
 }
 
-button{
-    margin: 15px 15px;
-}
 
 #recommendDiv{
     background-color: #75A3C1;
@@ -88,4 +86,9 @@ button{
 
 footer , section{
     clear: both;
+}
+
+
+section {
+    display: inline-block;
 }

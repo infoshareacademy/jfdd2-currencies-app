@@ -24,6 +24,36 @@
 </head>
 <body>
 
+<div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h1 class="text-center">Login</h1>
+            </div>
+            <div class="modal-body">
+                <form class="form col-md-12 center-block">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control input-lg" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-lg btn-block">Sign In</button>
+                        <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-12">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container" ng-controller="BaseController ">
     <nav class="navbar navbar-inverse ">
         <div class="container-fluid">
@@ -38,14 +68,11 @@
                 </button>
 
     <div class="container" ng-controller="logOut">
-        <section>
-            <div id="my-signin2"></div>
-            <div  class="ng-show" id="logAs"></div>
 
-        </section>
 
 
                 <a href="#"><img class="logo-in-menu" src="../images/logo-sm.png" alt="logo"></a>
+                <div  class="ng-show" id="logAs"></div>
             </div>
 
             <div>
@@ -53,12 +80,22 @@
                 <div class="collapse navbar-collapse olaf" id="bs-example-navbar-collapse-1" ng-controller="logOut">
                     <ul class="nav navbar-nav">
                         <!--<li class="active"><a href="#">Currencies <span class="sr-only">(current)</span></a></li>-->
-                        <li><button id ="logOut" type="submit"  ng-click="sighOut()" class="btn btn-default navbar-btn">Sign out</button></li>
-                        <li class="dropdown dropdown-inverse">
+
+
                         <li><a href="#">Charts</a></li>
                         <li><a href="#">Currencies</a></li>
+                        <li><button id ="logOut" type="submit"  ng-click="sighOut()" class="btn btn-default navbar-btn">Sign out</button></li>
                     </ul>
+                    <ul class="nav navbar-nav navbar-right">
 
+                        <li class="dropdown dropdown-inverse">
+                        <section>
+                            <section>
+                                <div id="my-signin2"></div>
+
+                            </section>
+                        </section>
+                    </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
    </div>
