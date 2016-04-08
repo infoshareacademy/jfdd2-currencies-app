@@ -89,7 +89,7 @@
         </section>
 
         <div id="chartSection" ng-controller="LineCtrl">
-            <h3 class="chartTitle">Your favorite charts:</h3>
+            <h3 class="chartTitle">Your favorite charts</h3>
 
             <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara">Dollar {{val1}}</p>
                 <canvas id="line" class="chart chart-line" chart-data="data"
@@ -129,7 +129,7 @@
         <footer ng-controller='recommendToFriend'>
 
             <div id="recommendDiv" ng-hide="show" class="ng-hide">
-                <p id="recommend">You recommend this application to <span>{{recommend.name}}</span>
+                <p id="recommend">You recommended this application to <span>{{recommend.name}}</span>
                     (login: {{recommend.login}}) on {{recommend.socialMedia}}. <span>Thanks!</span>
                     <button id ="cancelRecommend" type="submit" class="btn btn-default " ng-click="cancelRecommmend()">Cancel</button>
                 </p>
