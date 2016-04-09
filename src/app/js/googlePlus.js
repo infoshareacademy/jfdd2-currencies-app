@@ -6,6 +6,11 @@ function onSuccess(googleUser) {
   $('#logAs').append($logAs);
   $('#my-signin2').css({'display': 'none'});
   $('#logOut').css({'display': 'block'});
+  if (googleUser.getBasicProfile().getName() === localStorage.getItem('name')){
+    var $recommendAsNamePara = $("<p>").text('Your friend '+ localStorage.getItem('name') +' recommended you our application');
+    $('#recommendAsName').append($recommendAsNamePara);
+    $('#recommendAsNameDiv').show();
+  }
 }
 function onFailure(error) {
   console.log(error);

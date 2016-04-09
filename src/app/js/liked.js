@@ -3,6 +3,8 @@ $('div.iconDiv').click(function () {
     var $this = $(this);
     var $childOfDiv = $(this).children();
     var $likedCurr = $('.liked').length / 3;
+    $('#cancelLikedCurr').hide()
+
 
     console.log($likedCurr);
 

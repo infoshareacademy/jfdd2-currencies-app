@@ -14,9 +14,10 @@ function store() {
   localStorage.setItem('name', $inputName.val());
   localStorage.setItem('socialMedia', $inputSocialMedia.text());
 
-  $form.css({'display': 'none'});
+  //$form.css({'display': 'none'});
   var $alert = $("<p>").addClass('alert').text('Thank you for your recommendation!');
   $('#alert').append($alert);
+
 }
 $(document).ready(function () {
   $form.submit(function (item) {
@@ -26,6 +27,6 @@ $(document).ready(function () {
       return false;
     }
     store();
-
   });
+
 });

@@ -47,30 +47,35 @@
             localStorage.removeItem('name');
             localStorage.removeItem('socialMedia');
             $('#recommendDiv').css({'display': 'none'});
-            $scope.show = true;
+            $('#recommendAsNameDiv').css({'display': 'none'});
+
         }
     });
     app.controller('likedIcon', function ($scope) {
-        console.log(localStorage.length);
+
         if (localStorage.length > 3) {
+
             $('#iconTitle').hide();
             $('div.iconDiv').hide();
             $('#iconTitleLiked').show();
+            $('#cancelLikedCurr').show()
             for (var i = 0; i < localStorage.length; i++) {
                 $('#' + localStorage.getItem(localStorage.key(i))).show();
             }
         }
- /*       $scope.cancelLikedCurr = function () {
+        $scope.cancelLikedCurr = function () {
             $('#cancelLikedCurr').hide();
 
+            if(localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
+
                 for (var i = 0; i < localStorage.length; i++) {
-                    console.log(localStorage.key(i));
-                    if(localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
                     localStorage.removeItem(localStorage.key(i));
+                    console.log(localStorage.key(i));
                 }
             }
-
-        }*/
+            location.reload();
+        }
 
     });
+
 })();

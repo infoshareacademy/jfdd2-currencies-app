@@ -23,6 +23,15 @@
 }
 
 /*IKONY WALUT*/
+#cancelLikedCurr{
+    display: none;
+    color: #001038;
+    font-style: italic;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px 5px;
+    margin: 40px;
+}
 #iconTitle {
     font-family: serif;
     font-style: italic;
@@ -111,9 +120,22 @@ label {
 form button {
     margin: 15px 15px;
 }
-
+#recommendAsNameDiv{
+    display: none;
+}
+#recommendAsName{
+    background-color: #75A3FF;
+    border-radius: 10px 10px;
+    min-height: 40px;
+}
+#recommendAsName p {
+    color: white;
+    line-height: 40px;
+    font-style: italic;
+    text-align: center;
+}
 #recommendDiv {
-    background-color: #75A3C1;
+    background-color: #7588FF;
     border-radius: 10px 10px;
     min-height: 40px;
 }

@@ -93,9 +93,9 @@
                 <p>Norwegian krone</p></div>
             <div id="forint" class="iconDiv  col-xs-6 col-sm-4  "><h1>Ft </h1>
                 <p>Hungarian forint</p></div>
-            <!--<button id="cancelLikedCurr" type="submit" class="btn btn-default " ng-click="cancelLikedCurr()">-->
-                <!--Change your favorite currencies-->
-            <!--</button>-->
+            <button id="cancelLikedCurr"  type="submit" class="btn " ng-click="cancelLikedCurr()">
+                Change your favorite currencies
+            </button>
         </section>
         </section>
 
@@ -157,9 +157,13 @@
                 </p>
 
             </div>
+            <div id="recommendAsNameDiv">
+                <p id="recommendAsName" ng-hide="hideRecommend"></p>
+
+            </div>
 
             <div id="alert"></div>
-            <form id='form' ng-show="show" class="ng-show">
+            <form id='form'>
 
                 <h3 class="formTitle">If you want to recommend our application, please fill out form below!</h3>
                 <fieldset class="form-group">
