@@ -1,16 +1,15 @@
-
-(function(){
+(function () {
     var app = angular.module('Workshop', ['chart.js', 'ui.bootstrap']);
 
     app.controller('BaseController', function ($scope) {
         $scope.val1 = 'Chart';
-        $scope.val2= 'Chart';
-        $scope.val3= 'Chart';
-        $scope.val4= 'Chart'
+        $scope.val2 = 'Chart';
+        $scope.val3 = 'Chart';
+        $scope.val4 = 'Chart'
     });
     app.controller('logOut', logOut);
 
-    function logOut ($scope){
+    function logOut($scope) {
 
         $scope.sighOut = function () {
             var auth2 = gapi.auth2.getAuthInstance();
@@ -39,23 +38,39 @@
     app.controller('recommendToFriend', function ($scope) {
         $scope.show = (localStorage.getItem('login') === null);
         $scope.recommend = {
-                login: localStorage.getItem('login'),
-                name:  localStorage.getItem('name'),
-                socialMedia: localStorage.getItem('socialMedia')
-    }
-        $scope.cancelRecommmend = function(){
-            localStorage.clear();
+            login: localStorage.getItem('login'),
+            name: localStorage.getItem('name'),
+            socialMedia: localStorage.getItem('socialMedia')
+        }
+        $scope.cancelRecommmend = function () {
+            localStorage.removeItem('login');
+            localStorage.removeItem('name');
+            localStorage.removeItem('socialMedia');
             $('#recommendDiv').css({'display': 'none'});
             $scope.show = true;
         }
     });
     app.controller('likedIcon', function ($scope) {
-      console.log(localStorage.length);
-      if(localStorage.length > 3) {
-        $('div.iconDiv').hide();
-        for (var i = 0; i < localStorage.length; i++) {
-          $('#' + localStorage.getItem(localStorage.key(i))).show().addClass('iconAlign');
+        console.log(localStorage.length);
+        if (localStorage.length > 3) {
+            $('#iconTitle').hide();
+            $('div.iconDiv').hide();
+            $('#iconTitleLiked').show();
+            for (var i = 0; i < localStorage.length; i++) {
+                $('#' + localStorage.getItem(localStorage.key(i))).show();
+            }
         }
-      }
+ /*       $scope.cancelLikedCurr = function () {
+            $('#cancelLikedCurr').hide();
+
+                for (var i = 0; i < localStorage.length; i++) {
+                    console.log(localStorage.key(i));
+                    if(localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
+                    localStorage.removeItem(localStorage.key(i));
+                }
+            }
+
+        }*/
+
     });
 })();
