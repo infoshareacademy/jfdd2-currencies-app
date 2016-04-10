@@ -21,7 +21,7 @@
     width: 320px;
 }
 
-#logAs, #logAs {
+#logAs, #logAs2 {
     float: left;
     width: 300px;
     color: #9d9d9d;
@@ -96,8 +96,9 @@
     font-weight: 600;
     text-align: center;
     color: #001038;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    top: 30px;
 }
 
 .chartPara {
