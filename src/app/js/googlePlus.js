@@ -9,7 +9,7 @@ function onSuccess(googleUser) {
 
 
 
-    if (googleUser.getBasicProfile().getName() === localStorage.getItem('name')) {
+    if (googleUser.getBasicProfile().getName() === localStorage.getItem('name') && localStorage.getItem('socialMedia')=== 'Google +') {
         var $recommendAsNamePara = $("<p>").text('Your friend ' + localStorage.getItem('name') + ' recommended you our application');
         $('#recommendAsName').append($recommendAsNamePara);
         $('#recommendAsNameDiv').show();
