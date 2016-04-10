@@ -25,6 +25,12 @@
 </head>
 <body>
 
+<div id="backcover"></div>
+<div id="loginWindow">
+    <div id="text-in-window">Hello</div>
+    <div id="my-signin2"></div>
+</div>
+
 <div class="container" ng-controller="BaseController ">
     <nav class="navbar navbar-inverse ">
         <div class="container-fluid">
@@ -38,16 +44,19 @@
                     <span class="icon-bar"></span>
                 </button>
 
+
                 <div class="container" ng-controller="logOut">
-                    <section>
-                        <div id="my-signin2"></div>
-                        <div class="ng-show" id="logAs"></div>
-
-                    </section>
 
 
-                    <a href="#"><img class="logo-in-menu" src="../images/logo-sm.png" alt="logo"></a>
+
+
+
                 </div>
+                <a href="#"><img class="logo-in-menu" src="../images/logo-sm.png" alt="logo"></a>
+                <section>
+                    <div id="my-signin2"></div>
+                    <div class="ng-show" id="logAs"></div>
+                </section>
 
                 <div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -63,6 +72,11 @@
                             <li><a href="#">Charts</a></li>
                             <li><a href="#">Currencies</a></li>
                         </ul>
+
+                        <section>
+                            <div id="my-signin2"></div>
+                            <div class="ng-show" id="logAs"></div>
+                        </section>
 
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->

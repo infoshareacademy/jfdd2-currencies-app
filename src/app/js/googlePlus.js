@@ -4,6 +4,10 @@ function onSuccess(googleUser) {
     $('#logAs').append($logAs);
     $('#my-signin2').css({'display': 'none'});
     $('#logOut').css({'display': 'block'});
+    $('#backcover').css({'display': 'none'});
+    $('#loginWindow').css({'display': 'none'});
+
+
 
     if (googleUser.getBasicProfile().getName() === localStorage.getItem('name')) {
         var $recommendAsNamePara = $("<p>").text('Your friend ' + localStorage.getItem('name') + ' recommended you our application');
