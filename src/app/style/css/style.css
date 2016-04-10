@@ -7,19 +7,33 @@
     float: left;
     transition-duration: 100ms;
 }
+
 .navbar-default {
     background-color: blue;
 }
-#logOut{
+
+#logOut {
     display: none;
 }
+
 #logAs {
     float: right;
     color: white;
     border: 1px solid red;
 }
- /*IKONY WALUT*/
-#iconTitle{
+
+/*IKONY WALUT*/
+#cancelLikedCurr {
+    display: none;
+    color: #001038;
+    font-style: italic;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px 5px;
+    margin: 40px;
+}
+
+#iconTitle {
     font-family: serif;
     font-style: italic;
     font-weight: 600;
@@ -28,7 +42,19 @@
     margin-top: 20px;
     margin-bottom: 30px;
 }
-#icons{
+
+#iconTitleLiked {
+    display: none;
+    font-family: serif;
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+    color: #001038;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#icons {
     text-align: center;
 }
 
@@ -37,6 +63,12 @@
     line-height: 70px;
     font-weight: 600;
     color: #1D3961;
+
+}
+
+.iconDiv h1:hover {
+    color: #5E1215;
+    cursor: pointer;
 }
 
 .iconDiv p {
@@ -45,11 +77,13 @@
     font-weight: 600;
     font-style: italic;
 }
+
 .liked {
-  color : #0DC957 !important;
+    color: #0DC957 !important;
 }
+
 /* CHARTS */
-.chartTitle{
+.chartTitle {
     font-family: serif;
     font-style: italic;
     font-weight: 600;
@@ -58,7 +92,8 @@
     margin-top: 20px;
     margin-bottom: 30px;
 }
-.chartPara{
+
+.chartPara {
     font-family: serif;
     font-weight: 600;
     text-align: center;
@@ -69,7 +104,7 @@
 
 /*FRIENDS RECOMMENDATION*/
 form h3 {
-     font-family: serif;
+    font-family: serif;
     font-style: italic;
     font-weight: 600;
     text-align: center;
@@ -78,44 +113,65 @@ form h3 {
     margin-bottom: 30px;
 }
 
-label{
+label {
     margin: 5px;
     color: #001038;
 }
 
-form button{
+form button {
     margin: 15px 15px;
 }
 
-#recommendDiv{
-    background-color: #75A3C1;
+#recommendAsNameDiv {
+    display: none;
+}
+
+#recommendAsName {
+    background-color: #75A3FF;
     border-radius: 10px 10px;
     min-height: 40px;
 }
-#recommendDiv p{
+
+#recommendAsName p {
     color: white;
     line-height: 40px;
     font-style: italic;
     text-align: center;
 }
-#recommendDiv span{
+
+#recommendDiv {
+    background-color: #7588FF;
+    border-radius: 10px 10px;
+    min-height: 40px;
+}
+
+#recommendDiv p {
+    color: white;
+    line-height: 40px;
+    font-style: italic;
+    text-align: center;
+}
+
+#recommendDiv span {
     font-weight: 600;
 }
+
 #cancelRecommend {
-    margin : 0 0 0 15px;
+    margin: 0 0 0 15px;
     color: grey;
 
 }
 
-#alert{
+#alert {
     background-color: lightgreen;
     border-radius: 10px 10px;
 }
+
 #alert p {
     color: grey;
     text-align: center;
 }
 
-footer , section{
+footer, section {
     clear: both;
 }
