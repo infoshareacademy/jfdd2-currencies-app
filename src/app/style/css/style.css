@@ -1,0 +1,177 @@
+
+.logo-in-menu {
+    opacity: 1;
+    height: 40px;
+    width: auto;
+    margin: 10px 16px 10px 10px;
+    float: left;
+    transition-duration: 100ms;
+}
+
+.navbar-default {
+    background-color: blue;
+}
+
+#logOut {
+    display: none;
+}
+
+#logAs {
+    float: right;
+    color: white;
+    border: 1px solid red;
+}
+
+/*IKONY WALUT*/
+#cancelLikedCurr {
+    display: none;
+    color: #001038;
+    font-style: italic;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px 5px;
+    margin: 40px;
+}
+
+#iconTitle {
+    font-family: serif;
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+    color: #001038;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#iconTitleLiked {
+    display: none;
+    font-family: serif;
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+    color: #001038;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#icons {
+    text-align: center;
+}
+
+.iconDiv h1 {
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 600;
+    color: #1D3961;
+
+}
+
+.iconDiv h1:hover {
+    color: #5E1215;
+    cursor: pointer;
+}
+
+.iconDiv p {
+    color: #1D3961;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.liked {
+    color: #0DC957 !important;
+}
+
+/* CHARTS */
+.chartTitle {
+    font-family: serif;
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+    color: #001038;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.chartPara {
+    font-family: serif;
+    font-weight: 600;
+    text-align: center;
+    color: #001038;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/*FRIENDS RECOMMENDATION*/
+form h3 {
+    font-family: serif;
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+    color: #001038;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+label {
+    margin: 5px;
+    color: #001038;
+}
+
+form button {
+    margin: 15px 15px;
+}
+
+#recommendAsNameDiv {
+    display: none;
+}
+
+#recommendAsName {
+    background-color: #75A3FF;
+    border-radius: 10px 10px;
+    min-height: 40px;
+}
+
+#recommendAsName p {
+    color: white;
+    line-height: 40px;
+    font-style: italic;
+    text-align: center;
+}
+
+#recommendDiv {
+    background-color: #7588FF;
+    border-radius: 10px 10px;
+    min-height: 40px;
+}
+
+#recommendDiv p {
+    color: white;
+    line-height: 40px;
+    font-style: italic;
+    text-align: center;
+}
+
+#recommendDiv span {
+    font-weight: 600;
+}
+
+#cancelRecommend {
+    margin: 0 0 0 15px;
+    color: grey;
+
+}
+
+#alert {
+    background-color: lightgreen;
+    border-radius: 10px 10px;
+}
+
+#alert p {
+    color: grey;
+    text-align: center;
+}
+
+footer, section {
+    clear: both;
+}

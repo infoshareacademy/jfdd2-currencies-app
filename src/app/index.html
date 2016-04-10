@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Workshop">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-signin-client_id"
+          content="889971733451-rc0jkdgds285v8j9j130vh93a2eetcs7.apps.googleusercontent.com">
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+    <link href="style/css/style.css" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="bower_components/Chart.js/Chart.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+
+    <!-- App module -->
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+
+<div class="container" ng-controller="BaseController ">
+    <nav class="navbar navbar-inverse ">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="container" ng-controller="logOut">
+                    <section>
+                        <div id="my-signin2"></div>
+                        <div class="ng-show" id="logAs"></div>
+
+                    </section>
+
+
+                    <a href="#"><img class="logo-in-menu" src="../images/logo-sm.png" alt="logo"></a>
+                </div>
+
+                <div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse olaf" id="bs-example-navbar-collapse-1" ng-controller="logOut">
+                        <ul class="nav navbar-nav">
+                            <!--<li class="active"><a href="#">Currencies <span class="sr-only">(current)</span></a></li>-->
+                            <li>
+                                <button id="logOut" type="submit" ng-click="sighOut()"
+                                        class="btn btn-default navbar-btn">Sign out
+                                </button>
+                            </li>
+                            <li class="dropdown dropdown-inverse">
+                            <li><a href="#">Charts</a></li>
+                            <li><a href="#">Currencies</a></li>
+                        </ul>
+
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h3 id="iconTitle">Please check your three favorite currencies</h3>
+        <h3 id="iconTitleLiked">Your favorite currencies</h3>
+        <section id="icons" ng-controller="likedIcon">
+            <div id="usDollar" class="iconDiv  col-xs-6 col-sm-4  "><h1>$ </h1>
+                <p>US dollar</p></div>
+            <div id="euro" class="iconDiv  col-xs-6 col-sm-4  "><h1>€ </h1>
+                <p>Euro</p></div>
+            <div id="pound" class="iconDiv  col-xs-6 col-sm-4  "><h1>£ </h1>
+                <p>British pound</p></div>
+            <div id="yen" class="iconDiv  col-xs-6 col-sm-4  "><h1>¥ </h1>
+                <p>Japanese yen</p></div>
+            <div id="franc" class="iconDiv  col-xs-6 col-sm-4  "><h1>Fr</h1>
+                <p>Swiss franc</p></div>
+            <div id="canDollar" class="iconDiv  col-xs-6 col-sm-4  "><h1>$ </h1>
+                <p>Canadian dollar</p></div>
+            <div id="korona" class="iconDiv  col-xs-6 col-sm-4  "><h1>kr </h1>
+                <p>Swedish krona</p></div>
+            <div id="koruna" class="iconDiv  col-xs-6 col-sm-4  "><h1>Kč </h1>
+                <p>Czech koruna</p></div>
+            <div id="krone" class="iconDiv  col-xs-6 col-sm-4  "><h1>kr </h1>
+                <p>Norwegian krone</p></div>
+            <div id="forint" class="iconDiv  col-xs-6 col-sm-4  "><h1>Ft </h1>
+                <p>Hungarian forint</p></div>
+            <button id="cancelLikedCurr" type="submit" class="btn " ng-click="cancelLikedCurr()">
+                Change your favorite currencies
+            </button>
+        </section>
+        </section>
+
+        <section>
+            <header class="finanse"></header>
+
+            <iframe class="col-xs-12 col-sm-12 col-md-12"
+                    src="http://www.exchangerates.org.uk/widget/ER-LRTICKER.php?w=960&amp;s=1&amp;mc=GBP&amp;mbg=FFFFFF&amp;bs=no&amp;bc=FFFFFF&amp;f=verdana&amp;fs=10px&amp;fc=000044&amp;lc=036EB4&amp;lhc=06aee5&amp;vc=06AEE5&amp;vcu=008000&amp;vcd=ff0000"
+                    width="960" height="30" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe>
+
+        </section>
+
+        <div id="chartSection" ng-controller="LineCtrl">
+            <h3 class="chartTitle">Your favorite charts</h3>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara">Dollar {{val1}}</p>
+                <canvas id="line" class="chart chart-line" chart-data="data"
+                        chart-labels="labels" chart-legend="true" chart-series="series"
+                        chart-click="onClick">
+                </canvas>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara">Pound {{val2}}</p>
+                <canvas id="line-two" class="chart chart-line" chart-data="data"
+                        chart-labels="labels" chart-legend="true" chart-series="series"
+                        chart-click="onClick">
+                </canvas>
+
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara">Euro {{val3}}</p>
+                <canvas id="line-three" class="chart chart-line" chart-data="data"
+                        chart-labels="labels" chart-legend="true" chart-series="series"
+                        chart-click="onClick">
+                </canvas>
+
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara"> Pln {{val4}}</p>
+                <canvas id="line-four" class="chart chart-line" chart-data="data"
+                        chart-labels="labels" chart-legend="true" chart-series="series"
+                        chart-click="onClick">
+                </canvas>
+
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <footer ng-controller='recommendToFriend'>
+
+            <div id="recommendDiv" ng-hide="show" class="ng-hide">
+                <p id="recommend">You recommended this application to <span>{{recommend.name}}</span>
+                    (login: {{recommend.login}}) on {{recommend.socialMedia}}. <span>Thanks!</span>
+                    <button id="cancelRecommend" type="submit" class="btn btn-default " ng-click="cancelRecommmend()">
+                        Cancel
+                    </button>
+                </p>
+
+            </div>
+            <div id="recommendAsNameDiv">
+                <p id="recommendAsName" ng-hide="hideRecommend"></p>
+
+            </div>
+
+            <div id="alert"></div>
+            <form id='form'>
+
+                <h3 class="formTitle">If you want to recommend our application, please fill out form below!</h3>
+                <fieldset class="form-group">
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <label>Login</label>
+                <span>
+                    <input id="login" class="form-control" type="text" size="15" value="">
+                </span>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <label>Name</label>
+                <span>
+                    <input id="name" class="form-control" type="text" size="15" value="">
+                </span>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <label>Social Media</label>
+                <span>
+                    <select class="form-control" id="socialMedia">
+                        <option>Facebook</option>
+                        <option>Google +</option>
+                        <option>Twitter</option>
+                        <option>LinkedIn</option>
+                    </select>
+                </span>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="right"
+                            title="Filll out all fields in form to save recommendation">Save
+                    </button>
+
+                </fieldset>
+            </form>
+        </footer>
+    </div>
+</div>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+<script src="js/googlePlus.js"></script>
+<script src="js/friends-recommendation.js"></script>
+<script src="js/liked.js"></script>
+</body>
+</html>
