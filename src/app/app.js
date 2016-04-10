@@ -65,13 +65,22 @@
         }
         $scope.cancelLikedCurr = function () {
             $('#cancelLikedCurr').hide();
+            for (var i = 0; i <= localStorage.length; i++) {
 
-            if(localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
-
-                for (var i = 0; i < localStorage.length; i++) {
+                if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
                     localStorage.removeItem(localStorage.key(i));
-                    console.log(localStorage.key(i));
                 }
+                // temporary patch
+                if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
+                    localStorage.removeItem(localStorage.key(i));
+                }
+                if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
+                    localStorage.removeItem(localStorage.key(i));
+                }
+                if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
+                    localStorage.removeItem(localStorage.key(i));
+                }
+                //
             }
             location.reload();
         }
