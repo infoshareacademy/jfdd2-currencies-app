@@ -4,8 +4,12 @@ function onSuccess(googleUser) {
     $('#logAs').append($logAs);
     $('#my-signin2').css({'display': 'none'});
     $('#logOut').css({'display': 'block'});
+    $('#backcover').css({'display': 'none'});
+    $('#loginWindow').css({'display': 'none'});
 
-    if (googleUser.getBasicProfile().getName() === localStorage.getItem('name')) {
+
+
+    if (googleUser.getBasicProfile().getName() === localStorage.getItem('name') && localStorage.getItem('socialMedia')=== 'Google +') {
         var $recommendAsNamePara = $("<p>").text('Your friend ' + localStorage.getItem('name') + ' recommended you our application');
         $('#recommendAsName').append($recommendAsNamePara);
         $('#recommendAsNameDiv').show();
@@ -21,6 +25,7 @@ function renderButton() {
         'height': 50,
         'longtitle': true,
         'theme': 'dark',
+        'margin': '0 30',
         'onsuccess': onSuccess,
         'onfailure': onFailure
     });
