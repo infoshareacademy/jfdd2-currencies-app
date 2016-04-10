@@ -25,6 +25,7 @@ function renderButton() {
         'height': 50,
         'longtitle': true,
         'theme': 'dark',
+        'margin': '0 30',
         'onsuccess': onSuccess,
         'onfailure': onFailure
     });

@@ -196,11 +196,45 @@ footer, section {
 #loginWindow {
     position:fixed;
     background:white;
-    left:30%;
+    left:30px;
+    right: 30px;
     width:400px;
     margin:50px auto 0 auto;
     font-size:20px;
     color:red;
     z-index:201;
     padding:50px 50px;
+    border-radius: 15px 15px;
+}
+#text-in-window, #modal-login-text {
+    font-family: serif;
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+    color: #001038;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    clear: both;
+
+}
+
+.logo-in-modal {
+    opacity: 1;
+    height: 100px;
+    width: auto;
+    clear: both;
+    margin: 0 30%;
+}
+
+#my-signin2 {
+
+    clear: both;
+    margin-left: 30px;
+    display: inline-block;
+}
+
+#google-button-style {
+    margin: 0 auto;
+    clear: both;
+    width: 100%;
 }
