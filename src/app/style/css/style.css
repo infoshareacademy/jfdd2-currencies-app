@@ -1,4 +1,3 @@
-
 .logo-in-menu {
     opacity: 1;
     height: 50px;
@@ -18,11 +17,12 @@
 
 #bs-example-navbar-collapse-1 {
     float: right;
+    border: 50px;
+    width: 320px;
 }
 
-#logAs {
+#logAs, #logAs {
     float: left;
-    color: white;
     width: 300px;
     color: #9d9d9d;
     font-size: 16px;
@@ -209,6 +209,7 @@ footer, section {
     padding:50px 50px;
     border-radius: 15px 15px;
 }
+
 #text-in-window, #modal-login-text {
     font-family: serif;
     font-style: italic;
@@ -218,7 +219,6 @@ footer, section {
     margin-top: 40px;
     margin-bottom: 40px;
     clear: both;
-
 }
 
 .logo-in-modal {
@@ -229,8 +229,7 @@ footer, section {
     margin: 0 30%;
 }
 
-#my-signin2 {
-
+#my-signin2, #my-signin3  {
     clear: both;
     margin-left: 30px;
     display: inline-block;
@@ -240,4 +239,8 @@ footer, section {
     margin: 0 auto;
     clear: both;
     width: 100%;
+}
+
+.navbar-header {
+    height: 100px;
 }
