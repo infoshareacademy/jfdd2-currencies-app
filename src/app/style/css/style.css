@@ -5,6 +5,10 @@
     margin: 20px 16px 10px 10px;
     float: left;
     transition-duration: 100ms;
+    transition: transform 0.3s ease-out;
+}
+.logo-in-menu:hover {
+    transform: scale(1.3);
 }
 
 .navbar-default {
@@ -70,12 +74,13 @@
     line-height: 70px;
     font-weight: 600;
     color: #1D3961;
-
+    transition: transform 0.3s ease-out;
 }
 
 .iconDiv h1:hover {
     color: #5E1215;
     cursor: pointer;
+    transform: scale(1.3);
 }
 
 .iconDiv p {
