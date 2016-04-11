@@ -93,7 +93,10 @@
 .liked {
     color: #0DC957 !important;
 }
-
+/* IFrame with currencies */
+#iframeCurr {
+    margin: 0 5%;
+}
 /* CHARTS */
 .chartTitle {
     font-family: serif;
