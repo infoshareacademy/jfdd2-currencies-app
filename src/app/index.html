@@ -102,19 +102,20 @@
             <div id="forint" class="iconDiv  col-xs-6 col-sm-4  "><h1>Ft </h1>
                 <p>Hungarian forint</p></div>
             <button id="cancelLikedCurr" type="submit" class="btn " ng-click="cancelLikedCurr()">
-                Change your favorite currencies
+                Change your favourite currencies
             </button>
         </section>
 
         <div id="container2">
-        <section>
-            <header class="finanse"></header>
-
-            <iframe class="col-xs-12 col-sm-12 col-md-12"
-                    src="http://www.exchangerates.org.uk/widget/ER-LRTICKER.php?w=960&amp;s=1&amp;mc=GBP&amp;mbg=FFFFFF&amp;bs=no&amp;bc=FFFFFF&amp;f=verdana&amp;fs=10px&amp;fc=000044&amp;lc=036EB4&amp;lhc=06aee5&amp;vc=06AEE5&amp;vcu=008000&amp;vcd=ff0000"
-                    width="400" height="30" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe>
-
-        </section>
+            <section>
+                <header class="finanse"></header>
+                <div id="iframeCurr">
+                    <iframe class="col-xs-12 col-sm-12 col-md-12"
+                            src="http://www.exchangerates.org.uk/widget/ER-LRTICKER.php?w=960&amp;s=1&amp;mc=GBP&amp;mbg=FFFFFF&amp;bs=no&amp;bc=FFFFFF&amp;f=verdana&amp;fs=10px&amp;fc=000044&amp;lc=036EB4&amp;lhc=06aee5&amp;vc=06AEE5&amp;vcu=008000&amp;vcd=ff0000"
+                            width="400" height="30" frameborder="0" scrolling="no" marginwidth="0"
+                            marginheight="0"></iframe>
+                </div>
+            </section>
         </div>
 
         <div id="chartSection" ng-controller="LineCtrl">
@@ -151,7 +152,7 @@
 
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara"> PLN {{val4}}</p>
+            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara"> Franc {{val4}}</p>
                 <canvas id="line-four" class="chart chart-line" chart-data="data"
                         chart-labels="labels" chart-legend="true" chart-series="series"
                         chart-click="onClick">
