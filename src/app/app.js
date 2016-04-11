@@ -24,10 +24,10 @@
 
     app.controller("LineCtrl", function ($scope) {
 
-        $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+        $scope.labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         $scope.series = ['Currency Swings'];
         $scope.data = [
-            [100, 25, 80, 15, 90, 5, 50]
+            [4.2, 4.15, 4.2, 4.1, 4.3, 4.2, 4.3, 4.1, 4.3, 4.2, 4.2, 4.15]
 
 
         ];
@@ -35,6 +35,7 @@
             console.log(points, evt);
         };
     });
+
     app.controller('recommendToFriend', function ($scope) {
         $scope.show = (localStorage.getItem('login') === null);
         $scope.recommend = {
