@@ -20,6 +20,7 @@ function store() {
 
 }
 $(document).ready(function () {
+    console.log("Welcome in Valutar Currency Application! :)")
     $form.submit(function (item) {
         if ($.trim($inputLogin.val()) === "" || $.trim($inputName.val()) === "") {
 
