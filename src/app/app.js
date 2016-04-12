@@ -37,16 +37,26 @@
     });
 
     app.controller('recommendToFriend', function ($scope) {
-        $scope.show = (localStorage.getItem('login') === null);
+        var localStorageObject = JSON.parse(localStorage.getItem('friendsRecommendationObject'));
+        $scope.show = (localStorage.getItem('friendsRecommendationObject') === null);
+
         $scope.recommend = {
-            login: localStorage.getItem('login'),
-            name: localStorage.getItem('name'),
-            socialMedia: localStorage.getItem('socialMedia')
-        }
+            email: localStorageObject.email,
+            name: localStorageObject.name,
+            socialMedia: localStorageObject.socialMedia
+        };
+
+        $scope.recommendations = localStorageObject.email.map(function (item, index) {
+           return {
+               email: item,
+               name: localStorageObject.name[index],
+               socialMedia: localStorageObject.socialMedia[index]
+           };
+        });
+
+        console.log($scope);
         $scope.cancelRecommmend = function () {
-            localStorage.removeItem('login');
-            localStorage.removeItem('name');
-            localStorage.removeItem('socialMedia');
+            localStorage.removeItem('friendsRecommendationObject');
             $('#recommendDiv').css({'display': 'none'});
             $('#recommendAsNameDiv').css({'display': 'none'});
 
@@ -60,9 +70,9 @@
             $('div.iconDiv').hide();
             $('#iconTitleLiked').show();
             $('#cancelLikedCurr').show()
-            for (var i = 0; i < localStorage.length; i++) {
-                $('#' + localStorage.getItem(localStorage.key(i))).show();
-            }
+            //for (var i = 0; i < localStorage.length; i++) {
+            //    $('#' + localStorage.getItem(localStorage.key(i))).show();
+            //}
         }
         $scope.cancelLikedCurr = function () {
             $('#cancelLikedCurr').hide();
