@@ -1,22 +1,10 @@
-var storedLogin = localStorage.getItem('login');
-var storedName = localStorage.getItem('name');
-var storedSocialMedia = localStorage.getItem('socialMedia');
 
 var $form = $('#form');
 var $inputEmail = $('#email');
 var $inputName = $('#name');
-var $inputSocialMedia = $('#socialMedia option:selected');
-function store() {
-    localStorage.setItem('email', $inputEmail.val());
-    localStorage.setItem('name', $inputName.val());
-    localStorage.setItem('socialMedia', $inputSocialMedia.text());
 
-    //$form.css({'display': 'none'});
-    var $alert = $("<p>").addClass('alert').text('Thank you for your recommendation!');
-    $('#alert').append($alert);
 
-}
-var friendsRecommendationObject = {
+var friendsRecommendationObject = JSON.parse(localStorage.getItem('friendsRecommendationObject')) || {
     email: [],
     name: [],
     socialMedia: []
@@ -35,10 +23,11 @@ $(document).ready(function () {
             alert('Please fill out all fields to recommend');
             return false;
         }
-        store();
+        var $inputSocialMedia = $('#socialMedia option:selected');
         setNewRecommend($inputEmail.val(), $inputName.val(), $inputSocialMedia.text() );
         localStorage.setItem('friendsRecommendationObject', JSON.stringify(friendsRecommendationObject));
+
+
     });
 });
 
-///

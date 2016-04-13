@@ -39,7 +39,7 @@
     app.controller('recommendToFriend', function ($scope) {
         var localStorageObject = JSON.parse(localStorage.getItem('friendsRecommendationObject'));
         $scope.show = (localStorage.getItem('friendsRecommendationObject') === null);
-
+         if(localStorageObject === null) {return;}
         $scope.recommend = {
             email: localStorageObject.email,
             name: localStorageObject.name,
@@ -54,11 +54,19 @@
            };
         });
 
-        console.log($scope);
-        $scope.cancelRecommmend = function () {
-            localStorage.removeItem('friendsRecommendationObject');
-            $('#recommendDiv').css({'display': 'none'});
-            $('#recommendAsNameDiv').css({'display': 'none'});
+
+        $scope.cancelRecommmend = function (cancelItem) {
+            var localStorageItem = JSON.parse(localStorage.getItem('friendsRecommendationObject'));
+            if(localStorageItem === null) {return;}
+            var index =  cancelItem.length - 1;
+            console.log(cancelItem);
+            localStorageItem.email.splice(index, 1);
+            localStorageItem.name.splice(index, 1);
+            localStorageItem.socialMedia.splice(index, 1);
+
+            console.log(localStorageItem);
+            //$('#recommendDiv').css({'display': 'none'});
+            //$('#recommendAsNameDiv').css({'display': 'none'});
 
         }
     });
