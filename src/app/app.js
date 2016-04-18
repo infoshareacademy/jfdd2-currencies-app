@@ -57,7 +57,7 @@
             login: localStorage.getItem('login'),
             name: localStorage.getItem('name'),
             socialMedia: localStorage.getItem('socialMedia')
-        }
+        };
         $scope.cancelRecommmend = function () {
             localStorage.removeItem('login');
             localStorage.removeItem('name');
@@ -74,7 +74,7 @@
             $('#iconTitle').hide();
             $('div.iconDiv').hide();
             $('#iconTitleLiked').show();
-            $('#cancelLikedCurr').show()
+            $('#cancelLikedCurr').show();
             for (var i = 0; i < localStorage.length; i++) {
                 $('#' + localStorage.getItem(localStorage.key(i))).show();
             }
