@@ -58,15 +58,25 @@
         $scope.cancelRecommmend = function (cancelItem) {
             var localStorageItem = JSON.parse(localStorage.getItem('friendsRecommendationObject'));
             if(localStorageItem === null) {return;}
-            var index =  cancelItem.length - 1;
-            console.log(cancelItem);
-            localStorageItem.email.splice(index, 1);
-            localStorageItem.name.splice(index, 1);
-            localStorageItem.socialMedia.splice(index, 1);
 
-            console.log(localStorageItem);
-            //$('#recommendDiv').css({'display': 'none'});
-            //$('#recommendAsNameDiv').css({'display': 'none'});
+            console.log(cancelItem);
+            var emailArray = localStorageItem.email.filter(function(item){
+                return item !== cancelItem.email;
+            });
+            var nameArray = localStorageItem.name.filter(function(item){
+                return item !== cancelItem.name;
+            });
+            var socialMediaArray = localStorageItem.socialMedia.filter(function(item){
+                return item !== cancelItem.socialMedia;
+            });
+            localStorageItem.email = emailArray;
+            localStorageItem.name = nameArray;
+            localStorageItem.socialMedia = socialMediaArray;
+
+            localStorage.setItem('friendsRecommendationObject', JSON.stringify(localStorageItem));
+
+            location.reload();
+
 
         }
     });
