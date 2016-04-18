@@ -19,7 +19,6 @@ $('div.iconDiv').click(function () {
         setNewCurrency($this.attr('id'));
         $this.addClass('liked');
         $childOfDiv.addClass('liked');
-        console.log(likedCurrencyObject);
         localStorage.setItem('likedCurrencyObject', JSON.stringify(likedCurrencyObject));
     }
     else {
@@ -29,11 +28,7 @@ $('div.iconDiv').click(function () {
             return item !== $this.attr('id');
         });
         likedCurrencyObject.name = unCancelLiked;
-        console.log(likedCurrencyObject);
-
         localStorage.setItem('likedCurrencyObject', JSON.stringify(likedCurrencyObject));
-
-
 
     }
 });

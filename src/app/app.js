@@ -81,36 +81,21 @@
         }
     });
     app.controller('likedIcon', function ($scope) {
+debugger;
+        if ($('.liked').length >= 3){
 
-        if (localStorage.length > 3) {
-
+            console.log($('.liked').length);
             $('#iconTitle').hide();
             $('div.iconDiv').hide();
             $('#iconTitleLiked').show();
             $('#cancelLikedCurr').show()
 
         }
-        $scope.cancelLikedCurr = function () {
-            $('#cancelLikedCurr').hide();
-            //for (var i = 0; i <= localStorage.length; i++) {
-            //
-            //    if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
-            //        localStorage.removeItem(localStorage.key(i));
-            //    }
-            //    // temporary patch
-            //    if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
-            //        localStorage.removeItem(localStorage.key(i));
-            //    }
-            //    if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
-            //        localStorage.removeItem(localStorage.key(i));
-            //    }
-            //    if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
-            //        localStorage.removeItem(localStorage.key(i));
-            //    }
-            //    //
-            //}
-            location.reload();
-        }
+            $scope.cancelLikedCurr = function () {
+                $('#cancelLikedCurr').hide();
+                localstorage.remove('likedCurrencyObject');
+                location.reload();
+            };
 
     });
 
