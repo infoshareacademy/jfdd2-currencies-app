@@ -1,7 +1,12 @@
 DataLoader = function () {
 
   return {
-    loadCurrencyData: function (/* array[currencyCodes] */selectedCurrencies) {
+    /**
+     *
+     * @param selectedCurrencies
+     * @returns {{dates: Array, values: {}}}
+     */
+    loadCurrencyData: function (selectedCurrencies, callback) {
       var currencies = {
         dates: [],
         values: {}
@@ -17,10 +22,10 @@ DataLoader = function () {
         method: "GET",
         dataType: "json",
         success: function (data) {
-
+          var transformedData =...
+          callback(transformedData);
         }
       });
-      return currencies;
     }
   }
 }();
