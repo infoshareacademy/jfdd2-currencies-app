@@ -19,7 +19,8 @@
   "bugs": {
     "url": "https://github.com/infoshareacademy/materialy-angular_node/issues"
   },
-  "homepage": "https://github.com/infoshareacademy/materialy-angular_node#readme"
+  "homepage": "https://github.com/infoshareacademy/materialy-angular_node#readme",
+  "devDependencies": {
+    "qunitjs": "^1.23.1"
+  }
 }
-
-
