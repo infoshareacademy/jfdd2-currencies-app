@@ -88,29 +88,27 @@
             $('div.iconDiv').hide();
             $('#iconTitleLiked').show();
             $('#cancelLikedCurr').show()
-            //for (var i = 0; i < localStorage.length; i++) {
-            //    $('#' + localStorage.getItem(localStorage.key(i))).show();
-            //}
+
         }
         $scope.cancelLikedCurr = function () {
             $('#cancelLikedCurr').hide();
-            for (var i = 0; i <= localStorage.length; i++) {
-
-                if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
-                    localStorage.removeItem(localStorage.key(i));
-                }
-                // temporary patch
-                if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
-                    localStorage.removeItem(localStorage.key(i));
-                }
-                if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
-                    localStorage.removeItem(localStorage.key(i));
-                }
-                if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
-                    localStorage.removeItem(localStorage.key(i));
-                }
-                //
-            }
+            //for (var i = 0; i <= localStorage.length; i++) {
+            //
+            //    if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
+            //        localStorage.removeItem(localStorage.key(i));
+            //    }
+            //    // temporary patch
+            //    if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
+            //        localStorage.removeItem(localStorage.key(i));
+            //    }
+            //    if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
+            //        localStorage.removeItem(localStorage.key(i));
+            //    }
+            //    if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
+            //        localStorage.removeItem(localStorage.key(i));
+            //    }
+            //    //
+            //}
             location.reload();
         }
 
