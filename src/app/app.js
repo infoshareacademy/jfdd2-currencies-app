@@ -81,19 +81,20 @@
         }
     });
     app.controller('likedIcon', function ($scope) {
-debugger;
-        if ($('.liked').length >= 3){
 
-            console.log($('.liked').length);
+
+        if ($('.liked').length == 9){
+
             $('#iconTitle').hide();
             $('div.iconDiv').hide();
+            $('.liked').show()
             $('#iconTitleLiked').show();
             $('#cancelLikedCurr').show()
 
         }
             $scope.cancelLikedCurr = function () {
                 $('#cancelLikedCurr').hide();
-                localstorage.remove('likedCurrencyObject');
+                localStorage.removeItem('likedCurrencyObject');
                 location.reload();
             };
 
