@@ -65,9 +65,12 @@
                     <div class="collapse navbar-collapse olaf" id="bs-example-navbar-collapse-1" ng-controller="logOut">
                         <ul class="nav navbar-nav">
                             <li>
-                                <button id="logOut" type="submit" ng-click="sighOut()"
+                                <div ng-controller="LogTestCtrl as logTest">
+                                <button id="logOut" type="submit" ng-click="sighOut();logTest.doTest()"
                                 class="btn btn-default navbar-btn">Sign out
                                 </button>
+                                    </div>
+
                             </li>
                             <li class="dropdown dropdown-inverse">
                             <li><a href="#">Charts</a></li>
