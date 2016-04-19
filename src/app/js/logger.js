@@ -52,8 +52,8 @@
     mutedLogger.enableLogging(false);
 
     this.doTest = function () {
-      notMutedLogger.info("This *will* appear in your console");
-      mutedLogger.info("This will *not* appear in your console");
+      notMutedLogger.info(" ");
+      mutedLogger.info(" ");
     }
   });
 
