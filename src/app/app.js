@@ -1,4 +1,6 @@
+
 (function () {
+
     var app = angular.module('Workshop', ['chart.js', 'ui.bootstrap']);
 
     app.controller('BaseController', function ($scope) {
@@ -27,13 +29,12 @@
         $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
         $scope.series = ['Currency Swings'];
         $scope.data = [
-            [100, 25, 80, 15, 90, 5, 50]
-
-
+            [100, 25, 80, 15, 90, 5]
         ];
         $scope.onClick = function (points, evt) {
             console.log(points, evt);
         };
+
     });
     app.controller('recommendToFriend', function ($scope) {
         $scope.show = (localStorage.getItem('login') === null);

@@ -14,6 +14,7 @@
 
     <!-- Scripts -->
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
     <script src="bower_components/Chart.js/Chart.js"></script>
     <script type="text/javascript" src="js/angular.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -27,15 +28,15 @@
 </head>
 <body>
 
-<div id="backcover"></div>
-<div id="loginWindow">
-    <img class="logo-in-modal" src="images/logo-sm.png" alt="logo">
-    <h2 id="text-in-window">Welcome to Valutar application!</h2>
-    <p id="modal-login-text">Please sign in with Google+</p>
-    <div id="google-button-style">
-        <div id="my-signin2"></div>
-    </div>
-</div>
+<!--<div id="backcover"></div>-->
+<!--<div id="loginWindow">-->
+    <!--<img class="logo-in-modal" src="images/logo-sm.png" alt="logo">-->
+    <!--<h2 id="text-in-window">Welcome to Valutar application!</h2>-->
+    <!--<p id="modal-login-text">Please sign in with Google+</p>-->
+    <!--<div id="google-button-style">-->
+        <!--<div id="my-signin2"></div>-->
+    <!--</div>-->
+<!--</div>-->
 
 <div class="container" ng-controller="BaseController ">
     <nav class="navbar navbar-inverse ">
@@ -121,6 +122,11 @@
             <div></div>
             <h3 class="chartTitle">Your favourite charts</h3>
 
+            <div class="input-group input-daterange">
+                <input type="text" class="form-control" value="2012-04-05">
+                <span class="input-group-addon">to</span>
+                <input type="text" class="form-control" value="2012-04-19">
+            </div>
 
             <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara">Dollar {{val1}}</p>
                 <canvas id="line" class="chart chart-line" chart-data="data"
@@ -221,5 +227,11 @@
 <script src="js/googlePlus.js"></script>
 <script src="js/friends-recommendation.js"></script>
 <script src="js/liked.js"></script>
+<script type="text/javascript">
+    $('.input-daterange input').each(function() {
+        $(this).datepicker("clearDates");
+    });
+</script>
+
 </body>
 </html>
