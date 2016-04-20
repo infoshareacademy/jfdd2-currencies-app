@@ -87,7 +87,7 @@
         if (likedCurrencies.name.length == 3){
             $('#iconTitle').hide();
             $('div.iconDiv').hide();
-            $('div.iconDiv').click(false);
+            $('div.iconDiv').off('click');
 
             likedCurrencies.name.forEach(function(item){
                 $('.liked').removeClass('liked');

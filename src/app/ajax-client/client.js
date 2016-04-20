@@ -3,15 +3,15 @@ serverStorage = {
   url: 'http://isa-api-sl.herokuapp.com/api',
 
 
-getUserObject: function(callback, userEmail) {
+getUserObject: function() {
       $.ajax({
           type: 'GET',
-          url: this.url + userEmail,
+          url: this.url + '/userData',
           dataType: 'json',
           success: function(result) {
               console.info(result);
               console.log('get user information from server');
-              callback(result);
+
           },
           error: function(error) {
               console.error(error);

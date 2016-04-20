@@ -16,7 +16,7 @@ function onSuccess(googleUser) {
            localStorage.setItem('UserObject', JSON.stringify(userObject));
          console.log(JSON.parse(localStorage.getItem('UserObject')));
         serverStorage.addUserObject(JSON.stringify(userObject));
-
+        serverStorage.getUserObject();
 //TODO po zrobieniu wysylania na serwer
     //if (googleUser.getBasicProfile().getName() === localStorage.getItem('name') && localStorage.getItem('socialMedia')=== 'Google +') {
     //    var $recommendAsNamePara = $("<p>").text('Your friend ' + localStorage.getItem('name') + ' recommended you our application');
