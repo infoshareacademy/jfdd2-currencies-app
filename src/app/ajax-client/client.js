@@ -1,7 +1,7 @@
 serverStorage = {
 
-  url: 'http://localhost:8030',
-  //url: 'http://svshowroom.cloudapp.net:8030',
+  url: 'http://isa-api-sl.herokuapp.com/api',
+
 
 getUserObject: function(callback, userEmail) {
       $.ajax({
@@ -10,21 +10,21 @@ getUserObject: function(callback, userEmail) {
           dataType: 'json',
           success: function(result) {
               console.info(result);
-            console.log('get user infomation from server');
+              console.log('get user information from server');
               callback(result);
           },
           error: function(error) {
               console.error(error);
-            console.log('send user information on server');
+              console.log('send user information on server');
           }
       });
   },
-  addUserObject: function(person, userEmail) {
+  addUserObject: function(person) {
     $.ajax({
       type: 'POST',
-      url: this.url + userEmail,
+      url: this.url + '/userData',
       contentType:'application/json',
-      data: JSON.stringify(person),
+      data: person,
       success: function (result){
         console.log(result);
       },

@@ -59,7 +59,6 @@
             var localStorageItem = JSON.parse(localStorage.getItem('friendsRecommendationObject'));
             if(localStorageItem === null) {return;}
 
-            console.log(cancelItem);
             var emailArray = localStorageItem.email.filter(function(item){
                 return item !== cancelItem.email;
             });
@@ -81,16 +80,22 @@
         }
     });
     app.controller('likedIcon', function ($scope) {
+        var likedCurrencies = JSON.parse(localStorage.getItem('likedCurrencyObject'));
+        if(likedCurrencies === null) {return;}
+//todo get liked ikon from object
 
-
-        if ($('.liked').length == 9){
-
+        if (likedCurrencies.name.length == 3){
             $('#iconTitle').hide();
             $('div.iconDiv').hide();
-            $('.liked').show()
+            $('div.iconDiv').click(false);
+
+            likedCurrencies.name.forEach(function(item){
+                $('.liked').removeClass('liked');
+                $('#'+ item).show();
+
+            });
             $('#iconTitleLiked').show();
             $('#cancelLikedCurr').show()
-
         }
             $scope.cancelLikedCurr = function () {
                 $('#cancelLikedCurr').hide();
