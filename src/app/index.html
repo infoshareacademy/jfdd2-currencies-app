@@ -164,10 +164,10 @@
         <br>
         <footer ng-controller='recommendToFriend'>
 
-            <div id="recommendDiv" ng-hide="show" class="ng-hide">
-                <p id="recommend">You recommended this application to <span>{{recommend.name}}</span>
-                    (login: {{recommend.login}}) on {{recommend.socialMedia}}. <span>Thanks!</span>
-                    <button id="cancelRecommend" type="submit" class="btn btn-default " ng-click="cancelRecommmend()">
+            <div id="recommendDiv" ng-hide="show" class="ng-hide"  ng-repeat="recommendation in recommendations">
+                <p id="recommend" >You recommended this application to <span>{{recommendation.name}}</span>
+                    (email: {{recommendation.email}}) on {{recommendation.socialMedia}}. <span>Thanks!</span>
+                    <button id="cancelRecommend" type="submit" class="btn btn-default " ng-click="cancelRecommmend(recommendation)">
                         Cancel
                     </button>
                 </p>
@@ -179,16 +179,16 @@
             </div>
 
             <div id="alert"></div>
-            <form id='form'>
+            <form id='form' action="">
 
                 <h3 class="formTitle">If you want to recommend our application, please fill out form below!</h3>
                 <span class="space"> &nbsp;</span>
 
                 <fieldset class="form-group">
                     <div class="col-xs-12 col-sm-4 col-md-4">
-                        <label>Login</label>
+                        <label>Email</label>
                 <span>
-                    <input id="login" class="form-control" type="text" size="15" value="">
+                    <input id="email" class="form-control" type="text" size="15" value="">
                 </span>
                     </div>
                     <div class="col-xs-12 col-sm-4 col-md-4">
@@ -209,7 +209,7 @@
                 </span>
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="right"
+                    <button type="submit" class="btn btn-primary"  data-placement="right"
                             title="Filll out all fields in form to save recommendation">Save
                     </button>
 
