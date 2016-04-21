@@ -36,8 +36,8 @@ QUnit.test('should result has one date and one value per currency', function (as
   // when:
   DataLoader.loadCurrencyData(selectedCurrencies, function (result) {
     // then:
-    $.each(selectedCurrencies, function (index, currency) {
-      assert.equal(result.values[currency].length,1, 'one values for ' + currency);
+    $.each(selectedCurrencies, function () {
+      assert.equal(result.values[this].length,1, 'one values for ' + this);
     });
     assert.equal(result.values['PLN'][0], 2.2222, 'value for PLN');
     assert.equal(result.values['USD'][0], 3.3333, 'value for USD');

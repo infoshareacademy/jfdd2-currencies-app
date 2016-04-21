@@ -22,8 +22,29 @@ DataLoader = function () {
         method: "GET",
         dataType: "json",
         success: function (data) {
-          var transformedData =...
-          callback(transformedData);
+
+          //var result = {
+          //  values: {
+          //    PLN: [2.2222],
+          //    USD: [3.3333]
+          //  }
+          //};
+
+          var result = {
+            values: {}
+          };
+
+          selectedCurrencies.forEach(function (currency) {
+            result.values[currency] = [];
+          });
+
+          data.forEach(function (dataSet) {
+            selectedCurrencies.forEach(function (currency) {
+              result.values[currency].push(dataSet.rates[currency]);
+            });
+          });
+
+          callback(result);
         }
       });
     }
