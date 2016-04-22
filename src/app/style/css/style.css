@@ -93,6 +93,10 @@
 .liked {
     color: #0DC957 !important;
 }
+.liked:hover {
+    color: #1D3961 !important;
+    transform: scale(1) !important;
+}
 /* IFrame with currencies */
 #iframeCurr {
     margin: 0 5%;
