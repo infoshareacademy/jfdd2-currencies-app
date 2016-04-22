@@ -11,7 +11,7 @@ if(likedCurrencyObject.name.length <= 3) {
     likedCurrencyObject.name.forEach(function (item) {
         $("#" + item).addClass('liked');
         $("#" + item).children().addClass('liked');
-        console.log($("#" + item));
+
     });
 }else{
     localStorage.removeItem('likedCurrencyObject');
