@@ -16,7 +16,7 @@ function setNewRecommend (email, name, socialMedia){
 
 }
 $(document).ready(function () {
-    console.log("Welcome in Valutar Currency Application! :)")
+    console.log("Welcome in Valutar Currency Application! :)");
     $form.submit(function (item) {
         if ($.trim($inputEmail.val()) === "" || $.trim($inputName.val()) === "") {
 
@@ -26,7 +26,6 @@ $(document).ready(function () {
         var $inputSocialMedia = $('#socialMedia option:selected');
         setNewRecommend($inputEmail.val(), $inputName.val(), $inputSocialMedia.text() );
         localStorage.setItem('friendsRecommendationObject', JSON.stringify(friendsRecommendationObject));
-
 
     });
 });
