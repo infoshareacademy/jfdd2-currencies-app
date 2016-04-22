@@ -88,7 +88,6 @@
     if (likedCurrencies === null) {
       return;
     }
-//todo get liked ikon from object
 
     if (likedCurrencies.name.length == 3) {
       $('#iconTitle').hide();
@@ -105,7 +104,8 @@
     }
     $scope.cancelLikedCurr = function () {
       $('#cancelLikedCurr').hide();
-      localStorage.removeItem('likedCurrencyObject');
+      localStorage.setItem('likedCurrencyObject',  JSON.stringify({name: []}));
+
       location.reload();
     };
 
