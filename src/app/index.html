@@ -24,7 +24,6 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
-    <script src="js/Chart2.js"></script>
     <script src="js/bootstrap-picker.js"></script>
     <script src="js/line-historic-chart.js"></script>
 
@@ -172,45 +171,13 @@
 
             </div>
 
-
-            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara">Dollar {{val1}}</p>
-                <canvas id="line" class="chart chart-line" chart-data="data"
-                        chart-labels="labels" chart-legend="true" chart-series="series"
-                        chart-click="onClick">
-                </canvas>
-
-                <span class="space"> &nbsp;</span>
-                <span class="space"> &nbsp;</span>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara">Pound {{val2}}</p>
-                <canvas id="line-two" class="chart chart-line" chart-data="data"
-                        chart-labels="labels" chart-legend="true" chart-series="series"
-                        chart-click="onClick">
-                </canvas>
-                <span class="space"> &nbsp;</span>
-                <span class="space"> &nbsp;</span>
+            <div class="row wykres">
+                <div class="col-md-1"></div>
+                <div class="col-md-8" id="canvasDiv" >
+                    <canvas id="canvas" height="500" width="900"></canvas>
+                </div>
 
             </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara">Euro {{val3}}</p>
-                <canvas id="line-three" class="chart chart-line" chart-data="data"
-                        chart-labels="labels" chart-legend="true" chart-series="series"
-                        chart-click="onClick">
-                </canvas>
-                <span class="space"> &nbsp;</span>
-                <span class="space"> &nbsp;</span>
-
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara"> Franc {{val4}}</p>
-                <canvas id="line-four" class="chart chart-line" chart-data="data"
-                        chart-labels="labels" chart-legend="true" chart-series="series"
-                        chart-click="onClick">
-                </canvas>
-            </div>
-
-
-
 
         </div>
         <span class="space"> &nbsp;</span>
