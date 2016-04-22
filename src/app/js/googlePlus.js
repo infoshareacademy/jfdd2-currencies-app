@@ -40,6 +40,7 @@ function onSuccess(googleUser) {
 
     userFromServer.forEach(function (item) {
       //Add div when someone recommend our app to login user
+      if(item.friendsRecommend.email === undefined){return ;}
       item.friendsRecommend.email.forEach(function (item2) {
         if (item2 === googleUser.getBasicProfile().getEmail() && item.login !== googleUser.getBasicProfile().getEmail()) {
           var $recommendAsNamePara = $("<p>").text('Your friend  recommended You our application from email: ' + item.login);
