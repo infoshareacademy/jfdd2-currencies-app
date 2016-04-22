@@ -45,7 +45,6 @@ function onSuccess(googleUser) {
           var $recommendAsNamePara = $("<p>").text('Your friend  recommended You our application from email: ' + item.login);
           $('#recommendAsName').append($recommendAsNamePara);
           $('#recommendAsNameDiv').show();
-          return console.log(item.id);
         }
       });
     });
