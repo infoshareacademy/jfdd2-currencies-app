@@ -6,6 +6,7 @@ function setNewCurrency(name){
     likedCurrencyObject.name.push(name);
 }
 
+
 if(likedCurrencyObject.name.length <= 3) {
     likedCurrencyObject.name.forEach(function (item) {
         $("#" + item).addClass('liked');

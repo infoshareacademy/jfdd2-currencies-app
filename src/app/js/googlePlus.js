@@ -29,10 +29,11 @@ function onSuccess(googleUser) {
 
       var userObject = {
         login: googleUser.getBasicProfile().getEmail(),
-        likedCurrency: JSON.parse(localStorage.getItem('likedCurrencyObject')) || userExist.likedCurrency || {},
-        friendsRecommend: JSON.parse(localStorage.getItem('friendsRecommendationObject')) || userExist.friendsRecommend || {}
+        likedCurrency: JSON.parse(localStorage.getItem('likedCurrencyObject')) || userExist[0].likedCurrency || {},
+        friendsRecommend: JSON.parse(localStorage.getItem('friendsRecommendationObject')) || userExist[0].friendsRecommend || {}
       };
-
+      localStorage.setItem('friendsRecommendationObject', JSON.stringify(userObject.friendsRecommend));
+      localStorage.setItem('likedCurrencyObject', JSON.stringify(userObject.likedCurrency));
       localStorage.setItem('UserObject', JSON.stringify(userObject));
       serverStorage.addUserObject(JSON.stringify(userObject), userId[0]);
     }
