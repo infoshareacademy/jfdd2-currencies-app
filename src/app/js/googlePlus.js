@@ -1,5 +1,5 @@
 function onSuccess(googleUser) {
-  console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+  // console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
   var $logAs = $("<p>").addClass('logAs').text('Logged in as: ' + googleUser.getBasicProfile().getName());
   $('#logAs').append($logAs);
   $('#my-signin2').css({'display': 'none'});

@@ -23,13 +23,13 @@ $(document).ready(function () {
             alert('Please fill out all fields to recommend');
             return false;
         }
-        friendsRecommendationObject.email.forEach(function(item){
-            if(item === $inputEmail.val() || item === JSON.parse(localStorage.getItem('UserObject').login)){
-                $inputEmail = [];
-                $inputName = [];
-                $inputSocialMedia = [];
-            }
-        });
+        // friendsRecommendationObject.email.forEach(function(item){
+        //     if(item === $inputEmail.val() || item === JSON.parse(localStorage.getItem('UserObject').login)){
+        //         $inputEmail = [];
+        //         $inputName = [];
+        //         $inputSocialMedia = [];
+        //     }
+        // });
         var $inputSocialMedia = $('#socialMedia option:selected');
         setNewRecommend($inputEmail.val(), $inputName.val(), $inputSocialMedia.text() );
         localStorage.setItem('friendsRecommendationObject', JSON.stringify(friendsRecommendationObject));
