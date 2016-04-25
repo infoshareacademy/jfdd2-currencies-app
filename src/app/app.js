@@ -1,91 +1,114 @@
 (function () {
-    var app = angular.module('Workshop', ['chart.js', 'ui.bootstrap']);
+  var app = angular.module('Workshop', ['chart.js', 'ui.bootstrap']);
 
-    app.controller('BaseController', function ($scope) {
-        $scope.val1 = 'Chart';
-        $scope.val2 = 'Chart';
-        $scope.val3 = 'Chart';
-        $scope.val4 = 'Chart'
+  app.controller('BaseController', function ($scope) {
+    $scope.val1 = 'Chart';
+    $scope.val2 = 'Chart';
+    $scope.val3 = 'Chart';
+    $scope.val4 = 'Chart'
+  });
+  app.controller('logOut', logOut);
+
+  function logOut($scope) {
+
+    $scope.sighOut = function () {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+
+      });
+
+      location.reload();
+    }
+  }
+
+  app.controller("LineCtrl", function ($scope) {
+
+    $scope.labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    $scope.series = ['Currency Swings'];
+    $scope.data = [
+      [4.2, 4.15, 4.2, 4.1, 4.3, 4.2, 4.3, 4.1, 4.3, 4.2, 4.2, 4.15]
+
+
+    ];
+    $scope.onClick = function (points, evt) {
+      console.log(points, evt);
+    };
+  });
+
+  app.controller('recommendToFriend', function ($scope) {
+    var localStorageObject = JSON.parse(localStorage.getItem('friendsRecommendationObject'));
+    $scope.show = (localStorage.getItem('friendsRecommendationObject') === null);
+    if (localStorageObject === null) {
+      return;
+    }
+    $scope.recommend = {
+      email: localStorageObject.email,
+      name: localStorageObject.name,
+      socialMedia: localStorageObject.socialMedia
+    };
+
+    $scope.recommendations = localStorageObject.email.map(function (item, index) {
+      return {
+        email: item,
+        name: localStorageObject.name[index],
+        socialMedia: localStorageObject.socialMedia[index]
+      };
     });
-    app.controller('logOut', logOut);
 
-    function logOut($scope) {
 
-        $scope.sighOut = function () {
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function () {
-                console.log('User signed out.');
+    $scope.cancelRecommmend = function (cancelItem) {
+      var localStorageItem = JSON.parse(localStorage.getItem('friendsRecommendationObject'));
+      if (localStorageItem === null) {
+        return;
+      }
 
-            });
+      var emailArray = localStorageItem.email.filter(function (item) {
+        return item !== cancelItem.email;
+      });
+      var nameArray = localStorageItem.name.filter(function (item) {
+        return item !== cancelItem.name;
+      });
+      var socialMediaArray = localStorageItem.socialMedia.filter(function (item) {
+        return item !== cancelItem.socialMedia;
+      });
+      localStorageItem.email = emailArray;
+      localStorageItem.name = nameArray;
+      localStorageItem.socialMedia = socialMediaArray;
 
-            location.reload();
-        }
+      localStorage.setItem('friendsRecommendationObject', JSON.stringify(localStorageItem));
+
+      location.reload();
+
+
+    }
+  });
+  app.controller('likedIcon', function ($scope) {
+    var likedCurrencies = JSON.parse(localStorage.getItem('likedCurrencyObject'));
+    if (likedCurrencies === null) {
+      return;
     }
 
-    app.controller("LineCtrl", function ($scope) {
+    if (likedCurrencies.name.length == 3) {
+      $('#iconTitle').hide();
+      $('div.iconDiv').hide();
+      $('div.iconDiv').off('click');
 
-        $scope.labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        $scope.series = ['Currency Swings'];
-        $scope.data = [
-            [4.2, 4.15, 4.2, 4.1, 4.3, 4.2, 4.3, 4.1, 4.3, 4.2, 4.2, 4.15]
+      likedCurrencies.name.forEach(function (item) {
+        $('.liked').removeClass('liked');
+        $('#' + item).show();
 
+      });
+      $('#iconTitleLiked').show();
+      $('#cancelLikedCurr').show()
+    }
+    $scope.cancelLikedCurr = function () {
+      $('#cancelLikedCurr').hide();
+      localStorage.setItem('likedCurrencyObject',  JSON.stringify({name: []}));
 
-        ];
-        $scope.onClick = function (points, evt) {
-            console.log(points, evt);
-        };
-    });
+      location.reload();
+    };
 
-    app.controller('recommendToFriend', function ($scope) {
-        $scope.show = (localStorage.getItem('login') === null);
-        $scope.recommend = {
-            login: localStorage.getItem('login'),
-            name: localStorage.getItem('name'),
-            socialMedia: localStorage.getItem('socialMedia')
-        }
-        $scope.cancelRecommmend = function () {
-            localStorage.removeItem('login');
-            localStorage.removeItem('name');
-            localStorage.removeItem('socialMedia');
-            $('#recommendDiv').css({'display': 'none'});
-            $('#recommendAsNameDiv').css({'display': 'none'});
-
-        }
-    });
-    app.controller('likedIcon', function ($scope) {
-
-        if (localStorage.length > 3) {
-
-            $('#iconTitle').hide();
-            $('div.iconDiv').hide();
-            $('#iconTitleLiked').show();
-            $('#cancelLikedCurr').show()
-            for (var i = 0; i < localStorage.length; i++) {
-                $('#' + localStorage.getItem(localStorage.key(i))).show();
-            }
-        }
-        $scope.cancelLikedCurr = function () {
-            $('#cancelLikedCurr').hide();
-            for (var i = 0; i <= localStorage.length; i++) {
-
-                if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
-                    localStorage.removeItem(localStorage.key(i));
-                }
-                // temporary patch
-                if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
-                    localStorage.removeItem(localStorage.key(i));
-                }
-                if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
-                    localStorage.removeItem(localStorage.key(i));
-                }
-                if (localStorage.key(i) !== 'login' && localStorage.key(i) !== 'name' && localStorage.key(i) !== 'socialMedia') {
-                    localStorage.removeItem(localStorage.key(i));
-                }
-                //
-            }
-            location.reload();
-        }
-
-    });
+  });
 
 })();

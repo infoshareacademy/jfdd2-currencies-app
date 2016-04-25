@@ -110,7 +110,7 @@
             <section>
                 <header class="finanse"></header>
                 <div id="iframeCurr">
-                    <iframe class="col-xs-12 col-sm-12 col-md-12"
+                    <iframe sandbox="allow-scripts" class="col-xs-12 col-sm-12 col-md-12"
                             src="http://www.exchangerates.org.uk/widget/ER-LRTICKER.php?w=960&amp;s=1&amp;mc=GBP&amp;mbg=FFFFFF&amp;bs=no&amp;bc=FFFFFF&amp;f=verdana&amp;fs=10px&amp;fc=000044&amp;lc=036EB4&amp;lhc=06aee5&amp;vc=06AEE5&amp;vcu=008000&amp;vcd=ff0000"
                             width="400" height="30" frameborder="0" scrolling="no" marginwidth="0"
                             marginheight="0"></iframe>
@@ -164,10 +164,10 @@
         <br>
         <footer ng-controller='recommendToFriend'>
 
-            <div id="recommendDiv" ng-hide="show" class="ng-hide">
-                <p id="recommend">You recommended this application to <span>{{recommend.name}}</span>
-                    (login: {{recommend.login}}) on {{recommend.socialMedia}}. <span>Thanks!</span>
-                    <button id="cancelRecommend" type="submit" class="btn btn-default " ng-click="cancelRecommmend()">
+            <div id="recommendDiv" ng-hide="show" class="ng-hide"  ng-repeat="recommendation in recommendations">
+                <p id="recommend" >You recommended this application to <span>{{recommendation.name}}</span>
+                    (email: {{recommendation.email}}). <span>Thanks! =)</span>
+                    <button id="cancelRecommend" type="submit" class="btn btn-default " ng-click="cancelRecommmend(recommendation)">
                         Cancel
                     </button>
                 </p>
@@ -179,16 +179,16 @@
             </div>
 
             <div id="alert"></div>
-            <form id='form'>
+            <form id='form' action="">
 
                 <h3 class="formTitle">If you want to recommend our application, please fill out form below!</h3>
                 <span class="space"> &nbsp;</span>
 
                 <fieldset class="form-group">
                     <div class="col-xs-12 col-sm-4 col-md-4">
-                        <label>Login</label>
+                        <label>Email</label>
                 <span>
-                    <input id="login" class="form-control" type="text" size="15" value="">
+                    <input id="email" class="form-control" type="email" size="15" value="">
                 </span>
                     </div>
                     <div class="col-xs-12 col-sm-4 col-md-4">
@@ -209,7 +209,7 @@
                 </span>
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="right"
+                    <button type="submit" class="btn btn-primary"  data-placement="right"
                             title="Filll out all fields in form to save recommendation">Save
                     </button>
 
@@ -222,5 +222,6 @@
 <script src="js/googlePlus.js"></script>
 <script src="js/friends-recommendation.js"></script>
 <script src="js/liked.js"></script>
+<script src="ajax/client.js"></script>
 </body>
 </html>
