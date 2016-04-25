@@ -9,8 +9,8 @@ serverStorage = {
       url: this.url + '/userData',
       dataType: 'json',
       success: function (result) {
-        console.log('Get user information from server');
-        console.log(result);
+        //console.log('Get user information from server');
+        //console.log(result);
       },
       error: function (error) {
         console.error('Error send user');
@@ -24,11 +24,11 @@ serverStorage = {
       contentType: 'application/json',
       data: person,
       success: function (result) {
-        console.log('Update user information on server');
-        console.log(result);
+       // console.log('Update user information on server');
+        //console.log(result);
       },
       error: function (result) {
-        console.error(result);
+        //console.error(result);
       }
     })
   },
@@ -39,11 +39,11 @@ serverStorage = {
       contentType: 'application/json',
       data: person,
       success: function (result) {
-        console.log('Create new user object on server');
-        console.log(result);
+        //console.log('Create new user object on server');
+       // console.log(result);
       },
       error: function (result) {
-        console.error(result);
+        //console.error(result);
       }
     })
   },
