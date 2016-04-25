@@ -11,16 +11,23 @@
     <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
     <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
     <link href="style/css/style.css" rel="stylesheet">
+    <link href="style/css/bootstrap.min.css">
+    <link href="style/css/datepicker.css">
 
     <!-- Scripts -->
     <script type="text/javascript" src="js/jquery.js"></script>
     <script src="bower_components/Chart.js/Chart.js"></script>
+    <script src="bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="bower_components/chartist/dist/chartist.js"></script>
     <script type="text/javascript" src="js/angular.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
-    <script src="js/menu-configure.js"></script>
+    <script src="js/bootstrap-picker.js"></script>
+    <script src="js/line-historic-chart.js"></script>
+    <script src="js/Chart2.js"></script>
+    <script src="js/regex.js"></script>
 
     <!-- App module -->
     <script type="text/javascript" src="app.js"></script>
@@ -69,7 +76,7 @@
                                 </button>
                             </li>
                             <li class="dropdown dropdown-inverse">
-                            <li><a href="#">Charts</a></li>
+                            <li><a href="#test">Charts</a></li>
                             <li><a href="#">Currencies</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -120,43 +127,46 @@
 
         <div id="chartSection" ng-controller="LineCtrl">
             <div></div>
-            <h3 class="chartTitle">Your favourite charts</h3>
 
+            <div class="dashboard-heading col-md-12 col-xs-12"><h2>Daily charts of currencies</h2></div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara">Dollar {{val1}}</p>
-                <canvas id="line" class="chart chart-line" chart-data="data"
-                        chart-labels="labels" chart-legend="true" chart-series="series"
-                        chart-click="onClick">
-                </canvas>
+            <div class="row">
+                <form class="form-inline" id="currencyForm">
+                    <div class="form-group col-md-offset-3 col-lg-offset-2">
+                        <select id="currencyList" class="form-control col-md-2" style="margin-top:0;">
+                            <option value="" disabled selected hidden>Select your currency</option>
+                            <option value="USD">American dollar</option>
+                            <option value="AUD">Australian dollar</option>
+                            <option value="CAD">Canadian dollar</option>
+                            <option value="EUR">Euro</option>
+                            <option value="HUF">Hungarian forint</option>
+                            <option value="CHF">Swiss franc</option>
+                            <option value="GBP">Pound</option>
+                            <option value="JPY">Japanese yen</option>
+                            <option value="CZK">Czech koruna</option>
+                            <option value="DKK">Danish krone</option>
+                            <option value="NOK">Norwegian krone</option>
+                            <option value="SEK">Swedish krona</option>
 
-                <span class="space"> &nbsp;</span>
-                <span class="space"> &nbsp;</span>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Start date</label>
+                        <input type="text" id="data1" class="datepicker form-control" style="margin-top:0;">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">End date </label>
+                        <input type="text" id="data2" class="datepicker form-control" type="submit" style="margin-top:0;">
+                    </div>
+                    <button class="btn btn-primary" type="submit" id="createChart">Create chart</button>
+                </form>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara">Pound {{val2}}</p>
-                <canvas id="line-two" class="chart chart-line" chart-data="data"
-                        chart-labels="labels" chart-legend="true" chart-series="series"
-                        chart-click="onClick">
-                </canvas>
-                <span class="space"> &nbsp;</span>
-                <span class="space"> &nbsp;</span>
+            <div class="row wykres">
+                <div class="col-md-2"></div>
+                <div class="col-md-8" id="canvasDiv" >
+                    <canvas id="canvas" height="500" width="900"></canvas>
+                </div>
 
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara">Euro {{val3}}</p>
-                <canvas id="line-three" class="chart chart-line" chart-data="data"
-                        chart-labels="labels" chart-legend="true" chart-series="series"
-                        chart-click="onClick">
-                </canvas>
-                <span class="space"> &nbsp;</span>
-                <span class="space"> &nbsp;</span>
-
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6 exampleChart"><p class="chartPara"> Franc {{val4}}</p>
-                <canvas id="line-four" class="chart chart-line" chart-data="data"
-                        chart-labels="labels" chart-legend="true" chart-series="series"
-                        chart-click="onClick">
-                </canvas>
             </div>
         </div>
         <span class="space"> &nbsp;</span>
@@ -209,14 +219,15 @@
                 </span>
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-primary"  data-placement="right"
-                            title="Filll out all fields in form to save recommendation">Save
+                    <button type="submit" id="checkit" class="btn btn-primary"  data-placement="right"
+                            title="Fill out all fields in form to save recommendation">Save
                     </button>
 
                 </fieldset>
             </form>
         </footer>
     </div>
+
 </div>
 <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 <script src="js/googlePlus.js"></script>

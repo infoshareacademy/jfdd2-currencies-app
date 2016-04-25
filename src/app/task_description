@@ -1,6 +1,0 @@
-Task ngOptions
-
-wykorzystując dyrektywę ngOptions i kolekcję zawartą w kontrolerze BaseController stwórz następujące listy rozwijalne
-    1. pierwsza będzie złożona z elementów kolekcji reprezentowanych przez 'name'
-    2. druga niech będzie dodatkowo podzielona na kategorie zgodnie z 'category'
-    3. trzecia niech bierze pod uwagę status isAvailable
